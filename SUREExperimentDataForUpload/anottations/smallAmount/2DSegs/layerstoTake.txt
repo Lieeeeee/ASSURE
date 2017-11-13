@@ -1,0 +1,83 @@
+stuff to check. 
+lung 5, 120 long (sasha) vs short 
+lung 5, 130 big (sasha) vs small 
+liver case 5,43 CGT_mean_thresh.nii with weird mark
+	KYDNEYS
+
+10000100_1_CTce_ThAb.nii [-259.4 to 250.0]
+217
+226
+
+10000109_1_CTce_ThAb.nii [-292 to 301]
+192
+193
+203
+208
+215
+
+
+10000111_1_CTce_ThAb.nii [-102 to 352]
+202
+197
+
+10000112_1_CTce_ThAb.nii.gz [-216 to 453]
+217
+211
+203
+190
+
+LUNGS
+case2_07_02_2011 - look for the Z axis! [-1017 to  170, control point x=-784, y=0.233 Id=2]
+38
+40
+44
+48
+
+
+case5 [-1024 to 642  control point x=-1024, y=0 Id=1]
+130
+126
+123
+120
+
+case10 [-11262 to 2122]
+30
+34
+
+case 11 [-1023.0 to 416.7]
+130
+129
+123
+
+
+Livers - meanThresh is a good example
+case 1 [-37.3 to  165.7]
+15
+20
+25
+31
+36
+41
+case 5 [-68.8 to 223.4., x=-68.8, y=0, ID=1]
+[41,67,{35,39,43}]
+
+94
+95
+96
+
+
+
+
+
+Fetals
+case 95
+40
+45
+32
+28
+
+case 104
+36
+31
+24
+28
