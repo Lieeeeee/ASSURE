@@ -919,7 +919,7 @@ classdef VariabilityExperiment
             T = 1.5*std(single(im(erodedSeg)));
         end
         
-        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun)
+        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun, activeContourRun)
             
             if exist('outDir','var') && ~isempty(outDir) && ~exist('outDir','dir')
                 mkdir(outDir);
@@ -958,6 +958,8 @@ classdef VariabilityExperiment
                 %evaluates mask
                 if exist('trivialRun','var') && trivialRun
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskTrivial(im,logical(seg),pr,params,0.5);
+                elseif exist('activeContourRun', 'var') && activeContourRun
+                    varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg);
                 else
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMask(im,logical(seg),pr,params,0.5);
                 end

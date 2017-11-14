@@ -1,0 +1,230 @@
+activeContoursExperiment
+
+%% lungs
+
+t =
+
+     1
+
+
+t =
+
+     2
+
+
+t =
+
+     3
+
+
+t =
+
+     4
+
+
+t =
+
+     5
+
+dice(MAX,est(MAX)) 0.929 0.889 0.891 0.934 0.930 
+dice(MIN,est(MIN)) 0.941 0.845 0.916 0.916 0.921 
+dice(VAR,est(VAR)) 0.694 0.655 0.673 0.703 0.589 
+consensus 52295.681 25264.893 22822.453 25799.604 50882.940 
+consensus_estimated 49672.633 22758.789 22054.067 24892.111 49298.792 
+percent_change 0.050 0.099 0.034 0.035 0.031 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+possible_estimate 32932.715 12842.407 12007.329 15212.192 35564.833 
+percent_change -0.004 -0.339 -0.020 0.024 -0.042 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 31.518 28.514 27.503 35.161 46.452 
+percent_change -0.052 -0.445 -0.144 -0.058 -0.126 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 38.664 36.436 36.658 41.283 51.218 
+percent_change  0.108 0.151 0.109 0.058 0.057 
+vol_percent_low_diff -0.114 0.692 0.406 -1.243 0.635 
+vol_percent_upper_diff 0.776 -0.188 0.152 2.712 -0.456 
+vol_percent_low_diff_estimated -0.118 0.587 0.394 -1.188 0.620 
+vol_percent_upper_diff_estimated 0.687 -0.269 0.113 2.581 -0.473 
+recist_percent_low_diff 0.153 0.408 0.264 0.153 0.155 
+recist_percent_upper_diff 0.225 0.287 0.259 0.115 0.113 
+recist_percent_low_diff_estimated 0.109 0.145 0.158 0.105 0.048 
+recist_percent_upper_diff_estimated 0.093 0.093 0.122 0.051 0.049 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 16739.918 9916.382 10046.738 9679.919 13733.959 
+percent_change 0.141 0.367 0.091 0.052 0.180 
+
+
+
+ans =
+
+    0.9145    0.9081    0.6629    0.0499   -0.0761    0.1662   -0.1649    0.0964
+
+
+%% livers
+
+t =
+
+     1
+
+
+t =
+
+     2
+
+
+t =
+
+     3
+
+
+t =
+
+     4
+
+
+t =
+
+     5
+
+dice(MAX,est(MAX)) 0.944 0.938 0.933 0.835 0.874 
+dice(MIN,est(MIN)) 0.950 0.875 0.897 0.927 0.914 
+dice(VAR,est(VAR)) 0.679 0.686 0.667 0.539 0.592 
+consensus 120906.532 7491.171 46110.674 20431.929 36392.609 
+consensus_estimated 127871.538 7567.532 47293.875 27892.488 44951.325 
+percent_change -0.058 -0.010 -0.026 -0.365 -0.235 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+possible_estimate 90058.521 3858.442 31102.813 13379.085 24487.932 
+percent_change -0.031 0.194 -0.199 0.003 -0.115 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 63.404 19.110 45.539 21.135 32.677 
+percent_change -0.012 -0.003 -0.105 -0.001 -0.022 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 73.099 24.536 56.811 31.335 43.423 
+percent_change  -0.004 -0.018 0.000 -0.167 0.015 
+vol_percent_low_diff 0.198 0.167 -0.497 0.332 0.328 
+vol_percent_upper_diff 0.109 0.304 1.663 0.018 0.114 
+vol_percent_low_diff_estimated 0.174 0.328 -0.796 0.333 0.250 
+vol_percent_upper_diff_estimated 0.173 0.317 1.731 0.390 0.376 
+recist_percent_low_diff 0.079 0.139 0.167 0.137 0.126 
+recist_percent_upper_diff 0.071 0.088 0.150 0.097 0.206 
+recist_percent_low_diff_estimated 0.068 0.137 0.079 0.136 0.106 
+recist_percent_upper_diff_estimated 0.075 0.108 0.149 0.280 0.188 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 37813.017 3709.090 16191.062 14513.403 20463.393 
+percent_change -0.127 -0.372 0.198 -1.068 -0.417 
+
+
+
+ans =
+
+    0.9049    0.9126    0.6327   -0.1388   -0.0298   -0.3573   -0.0286   -0.0347
+
+
+%% kidney
+
+t =
+
+     1
+
+
+t =
+
+     2
+
+
+t =
+
+     3
+
+
+t =
+
+     4
+
+
+t =
+
+     5
+
+
+t =
+
+     6
+
+dice(MAX,est(MAX)) 0.975 0.977 0.969 0.977 0.969 0.971 
+dice(MIN,est(MIN)) 0.975 0.969 0.973 0.967 0.965 0.967 
+dice(VAR,est(VAR)) 0.716 0.710 0.691 0.656 0.667 0.717 
+consensus 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+consensus_estimated 45436.399 47204.556 25582.581 41162.428 27470.497 44586.677 
+percent_change 0.003 0.038 0.052 0.036 0.051 0.025 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+possible_estimate 38250.729 40275.842 21634.827 35512.051 23078.167 36305.385 
+percent_change -0.003 -0.012 0.008 0.011 0.009 0.002 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 54.486 63.685 64.438 60.055 58.304 64.847 
+percent_change 0.006 -0.023 -0.011 0.011 -0.012 -0.003 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 59.309 66.962 67.985 62.985 60.572 68.086 
+percent_change  0.178 0.018 0.019 0.179 0.031 0.024 
+vol_percent_low_diff 0.306 0.321 0.188 0.237 0.356 0.336 
+vol_percent_upper_diff -0.171 -0.163 0.004 -0.093 -0.199 -0.166 
+vol_percent_low_diff_estimated 0.304 0.313 0.195 0.246 0.361 0.338 
+vol_percent_upper_diff_estimated -0.173 -0.194 -0.048 -0.125 -0.240 -0.186 
+recist_percent_low_diff 0.039 0.053 0.045 0.025 0.045 0.038 
+recist_percent_upper_diff 0.265 0.036 0.039 0.232 0.037 0.038 
+recist_percent_low_diff_estimated 0.045 0.032 0.034 0.035 0.033 0.035 
+recist_percent_upper_diff_estimated 0.040 0.018 0.019 0.012 0.004 0.013 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7185.669 6928.714 3947.754 5650.377 4392.330 8281.292 
+percent_change 0.037 0.253 0.235 0.166 0.224 0.113 
+
+
+
+ans =
+
+    0.9731    0.9695    0.6930    0.0341    0.0025    0.1713   -0.0054    0.0749
+
+
+%% brains
+
+t =
+
+     1
+
+
+t =
+
+     2
+
+dice(MAX,est(MAX)) 0.950 0.899 
+dice(MIN,est(MIN)) 0.962 0.902 
+dice(VAR,est(VAR)) 0.634 0.607 
+consensus 152785.420 22957.563 
+consensus_estimated 138880.491 19043.684 
+percent_change 0.091 0.170 
+possible 112816.930 11912.942 
+possible_estimate 115065.694 13096.690 
+percent_change -0.020 -0.099 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 76.575 30.998 
+percent_change -0.096 -0.079 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.673 34.436 
+percent_change  0.031 0.081 
+vol_percent_low_diff 0.701 0.763 
+vol_percent_upper_diff -0.596 -0.543 
+vol_percent_low_diff_estimated 0.695 0.739 
+vol_percent_upper_diff_estimated -0.632 -0.621 
+recist_percent_low_diff 0.115 0.146 
+recist_percent_upper_diff 0.041 0.114 
+recist_percent_low_diff_estimated 0.030 0.079 
+recist_percent_upper_diff_estimated 0.009 0.023 
+var_volume 39968.491 11044.621 
+var_volume_estimate 23814.797 5946.994 
+percent_change 0.404 0.462 
+
+
+
+ans =
+
+    0.9245    0.9319    0.6204    0.1307   -0.0596    0.4329   -0.0875    0.0562

@@ -25,24 +25,24 @@ else
 end
 
 kernelSize = 2; Tlength = 3;
-[resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[],Tlength);%,'lung'); new
+[resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/dror_lung/',Tlength);%,'lung'); new
 printRes(resLung)
 
 kernelSize = 4; Tlength = 3;
-resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[],Tlength);
+resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/dror_liver/',Tlength);
 printRes(resLiver)
 
 kernelSize = 3; Tlength = 7;
-[resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[],Tlength);
+[resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/dror_kidney/',Tlength);
 
 printRes(resKidney)
 
 kernelSize = 3; Tlength = 5;
-[resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[],Tlength); %new
+[resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/dror_brain/',Tlength); %new
 printRes(resBrain)
 
 
-save('estimatedVariabilityEnv.mat')
+% save('estimatedVariabilityEnv.mat')
 
 
 

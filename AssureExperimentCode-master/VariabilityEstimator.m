@@ -117,12 +117,12 @@ classdef VariabilityEstimator
             sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
             
             alg = 'Chan-Vese'; %'edge'; % 
-            n_iterations = 10;
+            n_iterations = 7;
             contraction_param_out = -0.7;
-            contraction_param_in = 1;
             smooth_param_out = 0;
+            contraction_param_in = 1;
             smooth_param_in = 1;
-            for z = find(sum(sum(seg,1),2) > 0)
+            for z = find(sum(sum(seg,1),2) > 0)'
                 currentIm = im(:,:,z);
                 currentSeg = seg(:,:,z);
                 
