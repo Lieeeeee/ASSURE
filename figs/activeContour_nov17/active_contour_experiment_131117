@@ -26,30 +26,49 @@ t =
 
      5
 
+%% dice coefficient of the possible
 dice(MAX,est(MAX)) 0.929 0.889 0.891 0.934 0.930 
+%% dice coefficient of the concensus
 dice(MIN,est(MIN)) 0.941 0.845 0.916 0.916 0.921 
+%% dice coefficient of the variability region
 dice(VAR,est(VAR)) 0.694 0.655 0.673 0.703 0.589 
+
+%% consensus volume ground truth
 consensus 52295.681 25264.893 22822.453 25799.604 50882.940 
+%% consensus volume estimated
 consensus_estimated 49672.633 22758.789 22054.067 24892.111 49298.792 
+%% change in consensus volume (gt - estimated) / gt
 percent_change 0.050 0.099 0.034 0.035 0.031 
+
 possible 32805.908 9591.064 11771.300 15589.534 34140.034 
 possible_estimate 32932.715 12842.407 12007.329 15212.192 35564.833 
 percent_change -0.004 -0.339 -0.020 0.024 -0.042 
+
 recist_consensus 29.966 19.730 24.048 33.247 41.251 
 recist_consensus_estimated 31.518 28.514 27.503 35.161 46.452 
 percent_change -0.052 -0.445 -0.144 -0.058 -0.126 
+
 recist_possible 43.331 42.903 41.149 43.804 54.302 
 recist_possible_estimated 38.664 36.436 36.658 41.283 51.218 
 percent_change  0.108 0.151 0.109 0.058 0.057 
+
+%% ground truth difference range between segmentation and concensus
 vol_percent_low_diff -0.114 0.692 0.406 -1.243 0.635 
+%% ground truth difference range between segmentation and possible
 vol_percent_upper_diff 0.776 -0.188 0.152 2.712 -0.456 
+%% estimated difference range between segmentation and concensus
 vol_percent_low_diff_estimated -0.118 0.587 0.394 -1.188 0.620 
+%% estimated difference range between segmentation and possible
 vol_percent_upper_diff_estimated 0.687 -0.269 0.113 2.581 -0.473 
+
 recist_percent_low_diff 0.153 0.408 0.264 0.153 0.155 
 recist_percent_upper_diff 0.225 0.287 0.259 0.115 0.113 
 recist_percent_low_diff_estimated 0.109 0.145 0.158 0.105 0.048 
 recist_percent_upper_diff_estimated 0.093 0.093 0.122 0.051 0.049 
+
+%% ground truth variability region volume
 var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+%% estimated variability region volume
 var_volume_estimate 16739.918 9916.382 10046.738 9679.919 13733.959 
 percent_change 0.141 0.367 0.091 0.052 0.180 
 

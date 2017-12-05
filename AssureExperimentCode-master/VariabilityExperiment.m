@@ -919,15 +919,18 @@ classdef VariabilityExperiment
             T = 1.5*std(single(im(erodedSeg)));
         end
         
-        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun, activeContourRun)
+        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun, activeContourRun, segNumToUse)
             
             if exist('outDir','var') && ~isempty(outDir) && ~exist('outDir','dir')
                 mkdir(outDir);
             end
-            if ~exist('useMeanSegmentation','var') || isempty(useMeanSegmentation)
+            if exist('segNumToUse', 'var')
+                useGivenSegmentation = true;
+                useMeanSegmentation = false;
+            elseif ~exist('useMeanSegmentation','var') || isempty(useMeanSegmentation)
+                useGivenSegmentation = false;
                 useMeanSegmentation = true;
             end
-            
            
             N = length(imCell);
             outMasks = cell(size(imCell));
@@ -938,6 +941,8 @@ classdef VariabilityExperiment
                 if useMeanSegmentation
                     %seg = Utils.calcSegCellSum(imCell{t}.masks) > length(imCell{t}.masks)/2;
                     seg = stapleWrapper(imCell{t}.masks) > 0.5;
+                elseif useGivenSegmentation
+                    seg = imCell{t}.masks{segNumToUse};
                 else
                     seg = VariabilityEstimator.calcMeanShapeMultSegs(imCell{t}.masks);
                 end

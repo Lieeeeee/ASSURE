@@ -29,26 +29,33 @@ t =
 dice(MAX,est(MAX)) 0.904 0.910 0.907 0.929 0.950 
 dice(MIN,est(MIN)) 0.934 0.823 0.913 0.929 0.935 
 dice(VAR,est(VAR)) 0.650 0.685 0.715 0.731 0.698 
+
 consensus 52295.681 25264.893 22822.453 25799.604 50882.940 
 consensus_estimated 53295.887 24747.925 22541.630 27811.056 51020.794 
 percent_change -0.019 0.020 0.012 -0.078 -0.003 
+
 possible 32805.908 9591.064 11771.300 15589.534 34140.034 
 possible_estimate 31490.822 13304.443 11670.514 15658.142 35934.935 
 percent_change 0.040 -0.387 0.009 -0.004 -0.053 
+
 recist_consensus 29.966 19.730 24.048 33.247 41.251 
 recist_consensus_estimated 30.617 27.053 26.813 34.551 44.641 
 percent_change -0.022 -0.371 -0.115 -0.039 -0.082 
+
 recist_possible 43.331 42.903 41.149 43.804 54.302 
 recist_possible_estimated 39.007 36.347 35.645 42.964 51.553 
 percent_change  0.100 0.153 0.134 0.019 0.051 
+
 vol_percent_low_diff -0.114 0.692 0.406 -1.243 0.635 
 vol_percent_upper_diff 0.776 -0.188 0.152 2.712 -0.456 
 vol_percent_low_diff_estimated -0.069 0.572 0.411 -1.253 0.616 
 vol_percent_upper_diff_estimated 0.810 -0.205 0.137 3.001 -0.454 
+
 recist_percent_low_diff 0.153 0.408 0.264 0.153 0.155 
 recist_percent_upper_diff 0.225 0.287 0.259 0.115 0.113 
 recist_percent_low_diff_estimated 0.134 0.189 0.180 0.120 0.085 
 recist_percent_upper_diff_estimated 0.103 0.090 0.091 0.094 0.056 
+
 var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
 var_volume_estimate 21805.065 11443.481 10871.116 12152.914 15085.859 
 percent_change -0.119 0.270 0.016 -0.190 0.099 
