@@ -959,7 +959,7 @@ classdef VariabilityExperiment
                 if exist('trivialRun','var') && trivialRun
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskTrivial(im,logical(seg),pr,params,0.5);
                 elseif exist('activeContourRun', 'var') && activeContourRun
-                    varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg);
+                    va
                 else
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMask(im,logical(seg),pr,params,0.5);
                 end

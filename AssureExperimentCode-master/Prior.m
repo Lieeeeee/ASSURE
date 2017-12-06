@@ -268,7 +268,7 @@ classdef Prior
                     f = @(ind)VariabilityEstimator.calcAngle(yx(ind-curvGap,2),yx(ind-curvGap,1),yx(ind+curvGap,2),yx(ind+curvGap,1))+(pi/2);
                     angles = arrayfun(f,curvGap+1:size(yx,1)-curvGap);
                     for t=1:length(angles)
-
+                        
                         pntsArr1 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t),gap);
                         pntsArr2 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t)+pi,gap);
                         if size(pntsArr2,1)~=gap+1 || size(pntsArr1,1)~=gap+1 || ...
