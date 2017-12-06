@@ -27,25 +27,63 @@ else
     brainImgCell2D = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.sliceLongBrains, false);
 end
 
+%% using mean segmentations
+% experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_dec17/experiment_061217/';
+% kernelSize = 2; Tlength = 3;
+% [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,1);%,'lung'); new
+% printRes(resLung)
+% 
+% kernelSize = 4; Tlength = 3;
+% resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/'],Tlength,0,1);
+% printRes(resLiver)
+% 
+% kernelSize = 3; Tlength = 7;
+% [resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[experiment_folder 'kidney/'],Tlength,0,1);
+% printRes(resKidney)
+% 
+% kernelSize = 3; Tlength = 5;
+% [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/'],Tlength,0,1); %new
+% printRes(resBrain)
+% 
+% 
+% save('AssureExperimentCode-master/activeContourEstimationExperiment_meanSegInit.mat')
+
+%% using other segmentation every time
+experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_dec17/experiment_061217/different_init/';
+allResStruct = struct;
+
 kernelSize = 2; Tlength = 3;
-[resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/lung/',Tlength,0,1);%,'lung'); new
-printRes(resLung)
+for segNum = 1:7
+    [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/' num2str(segNum) '/'],Tlength,0,1,segNum);
+    printRes(resLung)
+    allResStruct.lungRes{segNum} = resLung;
+    allResStruct.lungOutMasks{segNum} = outMasksLung;
+end
+
 
 kernelSize = 4; Tlength = 3;
-resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/liver/',Tlength,0,1);
-printRes(resLiver)
+for segNum = 1:8
+    [resLiver, outMasksLiver] = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/' num2str(segNum) '/'],Tlength,0,1,segNum);
+    printRes(resLiver)
+    allResStruct.liverRes{segNum} = resLiver;
+    allResStruct.liverOutMasks{segNum} = outMasksLiver;
+end
+
 
 kernelSize = 3; Tlength = 7;
-[resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/kidney/',Tlength,0,1);
-printRes(resKidney)
+for segNum = 1:7
+    [resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[experiment_folder 'kidney/' num2str(segNum) '/'],Tlength,0,1,segNum);
+    printRes(resKidney)
+    allResStruct.kidneyRes{segNum} = resKidney;
+    allResStruct.kidneyOutMasks{segNum} = outMasksKidney;
+end
 
 kernelSize = 3; Tlength = 5;
-[resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],'/cs/casmip/clara.herscu/git/thesis/figs/activeContour_nov17/experiment_131117/brain/',Tlength,0,1); %new
-printRes(resBrain)
+for segNum = 1:7
+    [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/' num2str(segNum) '/'],Tlength,0,1,segNum);
+    printRes(resBrain)
+    allResStruct.brainRes{segNum} = resBrain;
+    allResStruct.brainOutMasks{segNum} = outMasksBrain;
+end
 
-
-save('AssureExperimentCode-master/activeContourEstimationExperiment.mat')
-
-
-
-
+save('AssureExperimentCode-master/activeContourDifferentInitializationsExperiment061217.mat')
