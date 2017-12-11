@@ -126,10 +126,10 @@ classdef VariabilityEstimator
                 currentIm = im(:,:,z);
                 currentSeg = seg(:,:,z);
                 
-                % first, apply active contour outwards, starting from the given mean segmentataion
+                % first, apply active contour outwards, starting from the given segmentataion
                 bw_1 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_out, 'SmoothFactor', smooth_param_out);
                 
-                % next, apply active contour inwards, starting from the given mean segmentataion
+                % next, apply active contour inwards, starting from the given segmentataion
                 bw_2 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_in, 'SmoothFactor', smooth_param_in);
                 
                 varMask(:,:,z) = (bw_1 | bw_2) - (bw_1 & bw_2); % bw_1 - bw_2

@@ -272,15 +272,18 @@ classdef Prior
                         pntsArr1 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t),gap);
                         pntsArr2 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t)+pi,gap);
                         
-%                         % adding limit check
+                        % adding limit check
 %                         pntsArr1 = min(pntsArr1, size(currentIm, 1));
 %                         pntsArr2 = min(pntsArr2, size(currentIm, 2));
                         
                         if size(pntsArr2,1)~=gap+1 || size(pntsArr1,1)~=gap+1 || ...
                                 ~isequal(pntsArr1(gap+1,:),[y(t),x(t)]) ||  ~isequal(pntsArr2(gap+1,:),[y(t),x(t)])
-                            error 'handle this';
+%                             pntsArr1 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t),gap/2);
+%                             pntsArr2 = VariabilityEstimator.pointPathFromAngle(y(t),x(t),angles(t)+pi,gap/2);
+%                             error 'handle this';
                         end
                         pntsArr = [pntsArr1(1:end-1,:);pntsArr2(end:-1:1,:)];
+                        pntsVals = currentIm(sub2ind(size(currentIm),pntsArr(:,1),pntsArr(:,2)));
                         
 %                         try
 %                         pntsVals = currentIm(sub2ind(size(currentIm),pntsArr(:,1),pntsArr(:,2)));
