@@ -116,10 +116,10 @@ classdef VariabilityEstimator
             varMask = false(size(seg));
             sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
             
-            alg = 'Chan-Vese'; %'edge'; % 
-            n_iterations = 5;
-            contraction_param_out = -0.5;
-            smooth_param_out = 0;
+            alg = 'edge'; % 'Chan-Vese'; 
+            n_iterations = 4; % 5
+            contraction_param_out = -0.5; % -0.5
+            smooth_param_out = 0.1; % 0
             contraction_param_in = 1;
             smooth_param_in = 1;
             for z = find(sum(sum(seg,1),2) > 0)'

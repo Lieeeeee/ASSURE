@@ -1,0 +1,934 @@
+>> resultsAnalysisActiveContours
+========== lung ==========
+dice(MAX,est(MAX)) 0.917 0.870 0.867 0.924 0.916 
+dice(MIN,est(MIN)) 0.940 0.778 0.905 0.915 0.914 
+dice(VAR,est(VAR)) 0.646 0.510 0.594 0.631 0.479 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 51080.331 23402.100 23500.390 25101.053 50689.011 
+percent_change 0.023 0.074 -0.030 0.027 0.004 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 34851.914 15032.959 13462.267 17226.763 38963.976 
+percent_change -0.062 -0.567 -0.144 -0.105 -0.141 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 33.043 31.106 29.724 37.348 47.648 
+percent_change -0.103 -0.577 -0.236 -0.123 -0.155 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 39.648 37.346 38.145 42.367 52.442 
+percent_change  0.085 0.130 0.073 0.033 0.034 
+vol_percent_low_diff -0.114 0.692 0.406 -1.243 0.635 
+vol_percent_upper_diff 0.776 -0.188 0.152 2.712 -0.456 
+vol_percent_low_diff_estimated -0.184 0.517 0.321 -1.478 0.583 
+vol_percent_upper_diff_estimated 0.735 -0.248 0.186 2.611 -0.458 
+recist_percent_low_diff 0.153 0.408 0.264 0.153 0.155 
+recist_percent_upper_diff 0.225 0.287 0.259 0.115 0.113 
+recist_percent_low_diff_estimated 0.066 0.067 0.091 0.049 0.024 
+recist_percent_upper_diff_estimated 0.121 0.120 0.167 0.079 0.074 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 16228.417 8369.141 10038.124 7874.290 11725.035 
+percent_change 0.167 0.466 0.092 0.229 0.300 
+
+
+========== liver ==========
+dice(MAX,est(MAX)) 0.926 0.927 0.919 0.796 0.841 
+dice(MIN,est(MIN)) 0.941 0.926 0.874 0.923 0.897 
+dice(VAR,est(VAR)) 0.566 0.672 0.593 0.438 0.493 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 131815.721 7537.212 50585.054 30279.263 48841.650 
+percent_change -0.090 -0.006 -0.097 -0.482 -0.342 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 96951.887 4735.462 33208.655 15000.174 26700.114 
+percent_change -0.110 0.011 -0.281 -0.118 -0.216 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 65.385 20.799 46.802 22.344 34.136 
+percent_change -0.043 -0.091 -0.136 -0.058 -0.068 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 74.455 24.904 58.817 32.732 45.264 
+percent_change  -0.022 -0.034 -0.035 -0.219 -0.027 
+vol_percent_low_diff 0.198 0.167 -0.497 0.332 0.328 
+vol_percent_upper_diff 0.109 0.304 1.663 0.018 0.114 
+vol_percent_low_diff_estimated 0.111 0.176 -0.918 0.253 0.183 
+vol_percent_upper_diff_estimated 0.209 0.312 1.921 0.509 0.495 
+recist_percent_low_diff 0.079 0.139 0.167 0.137 0.126 
+recist_percent_upper_diff 0.071 0.088 0.150 0.097 0.206 
+recist_percent_low_diff_estimated 0.039 0.061 0.053 0.087 0.066 
+recist_percent_upper_diff_estimated 0.095 0.125 0.190 0.337 0.238 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 34863.834 2801.750 17376.398 15279.090 22141.535 
+percent_change -0.039 -0.036 0.139 -1.177 -0.534 
+
+
+========== kidney ==========
+dice(MAX,est(MAX)) 0.970 0.973 0.966 0.974 0.966 0.966 
+dice(MIN,est(MIN)) 0.972 0.964 0.971 0.969 0.962 0.964 
+dice(VAR,est(VAR)) 0.641 0.593 0.610 0.596 0.564 0.631 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 45706.065 46834.032 25424.194 40890.172 27251.470 44409.615 
+percent_change -0.003 0.046 0.057 0.042 0.059 0.029 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 39598.285 42376.781 22617.188 36869.092 24467.547 38279.895 
+percent_change -0.039 -0.065 -0.037 -0.027 -0.051 -0.052 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 55.362 65.042 65.562 61.275 60.266 66.620 
+percent_change -0.010 -0.044 -0.029 -0.009 -0.046 -0.031 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.285 66.922 68.000 62.928 60.623 67.757 
+percent_change  0.165 0.018 0.019 0.180 0.031 0.029 
+vol_percent_low_diff 0.306 0.321 0.188 0.237 0.356 0.336 
+vol_percent_upper_diff -0.171 -0.163 0.004 -0.093 -0.199 -0.166 
+vol_percent_low_diff_estimated 0.280 0.277 0.159 0.217 0.323 0.302 
+vol_percent_upper_diff_estimated -0.169 -0.201 -0.054 -0.131 -0.246 -0.190 
+recist_percent_low_diff 0.039 0.053 0.045 0.025 0.045 0.038 
+recist_percent_upper_diff 0.265 0.036 0.039 0.232 0.037 0.038 
+recist_percent_low_diff_estimated 0.029 0.011 0.017 0.016 0.001 0.009 
+recist_percent_upper_diff_estimated 0.057 0.017 0.019 0.011 0.005 0.008 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 6107.780 4457.251 2807.007 4021.080 2783.923 6129.720 
+percent_change 0.181 0.519 0.456 0.407 0.508 0.344 
+
+
+========== brain ==========
+dice(MAX,est(MAX)) 0.945 0.892 
+dice(MIN,est(MIN)) 0.945 0.862 
+dice(VAR,est(VAR)) 0.447 0.430 
+possible 152785.420 22957.563 
+possible_estimated 137147.427 18790.126 
+percent_change 0.102 0.182 
+possible 112816.930 11912.942 
+consensus_estimated 124358.654 15326.142 
+percent_change -0.102 -0.287 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 78.093 32.886 
+percent_change -0.118 -0.145 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.400 34.344 
+percent_change  0.034 0.084 
+vol_percent_low_diff 0.701 0.763 
+vol_percent_upper_diff -0.596 -0.543 
+vol_percent_low_diff_estimated 0.671 0.695 
+vol_percent_upper_diff_estimated -0.637 -0.626 
+recist_percent_low_diff 0.115 0.146 
+recist_percent_upper_diff 0.041 0.114 
+recist_percent_low_diff_estimated 0.011 0.023 
+recist_percent_upper_diff_estimated 0.006 0.020 
+var_volume 39968.491 11044.621 
+var_volume_estimate 12788.773 3463.984 
+percent_change 0.680 0.686 
+
+
+========== lung ==========
+initialized with seg no. 1
+dice(MAX,est(MAX)) 0.915 0.889 0.883 0.911 0.922 
+dice(MIN,est(MIN)) 0.939 0.720 0.831 0.910 0.896 
+dice(VAR,est(VAR)) 0.651 0.484 0.511 0.616 0.451 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 50792.522 26866.455 25654.801 24767.370 52668.495 
+percent_change 0.029 -0.063 -0.124 0.040 -0.035 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 33630.865 16909.790 15643.381 15839.017 40446.720 
+percent_change -0.025 -0.763 -0.329 -0.016 -0.185 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 34.586 36.442 35.457 37.548 50.411 
+percent_change -0.154 -0.847 -0.474 -0.129 -0.222 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 39.455 42.800 41.960 41.874 54.887 
+percent_change  0.089 0.002 -0.020 0.044 -0.011 
+vol_percent_low_diff -0.164 0.725 0.487 -1.381 0.648 
+vol_percent_upper_diff 0.855 -0.276 -0.005 2.940 -0.475 
+vol_percent_low_diff_estimated -0.193 0.515 0.318 -1.419 0.582 
+vol_percent_upper_diff_estimated 0.801 -0.230 0.119 2.782 -0.456 
+recist_percent_low_diff 0.174 0.493 0.354 0.154 0.200 
+recist_percent_upper_diff 0.194 0.102 0.105 0.115 0.053 
+recist_percent_low_diff_estimated 0.047 0.064 0.048 0.044 0.023 
+recist_percent_upper_diff_estimated 0.087 0.100 0.126 0.066 0.064 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 17161.658 9956.665 10011.419 8928.353 12221.775 
+percent_change 0.119 0.365 0.094 0.126 0.270 
+
+
+initialized with seg no. 3
+dice(MAX,est(MAX)) 0.908 0.847 0.874 0.931 0.930 
+dice(MIN,est(MIN)) 0.946 0.820 0.859 0.885 0.896 
+dice(VAR,est(VAR)) 0.645 0.526 0.542 0.590 0.494 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 50849.514 21069.336 23838.067 26049.086 52081.099 
+percent_change 0.028 0.166 -0.045 -0.010 -0.024 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 33526.855 13128.662 14115.223 18040.699 39459.782 
+percent_change -0.022 -0.369 -0.199 -0.157 -0.156 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 32.037 27.408 29.970 39.838 49.530 
+percent_change -0.069 -0.389 -0.246 -0.198 -0.201 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 38.874 33.514 37.457 43.485 53.670 
+percent_change  0.103 0.219 0.090 0.007 0.012 
+vol_percent_low_diff -0.173 0.646 0.421 -1.172 0.640 
+vol_percent_upper_diff 0.870 -0.069 0.122 2.595 -0.463 
+vol_percent_low_diff_estimated -0.199 0.516 0.306 -1.514 0.584 
+vol_percent_upper_diff_estimated 0.818 -0.223 0.172 2.630 -0.451 
+recist_percent_low_diff 0.121 0.324 0.255 0.187 0.189 
+recist_percent_upper_diff 0.271 0.469 0.274 0.071 0.067 
+recist_percent_low_diff_estimated 0.061 0.061 0.072 0.026 0.026 
+recist_percent_upper_diff_estimated 0.140 0.148 0.160 0.063 0.055 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 17322.659 7940.674 9722.844 8008.387 12621.317 
+percent_change 0.111 0.493 0.120 0.216 0.246 
+
+
+initialized with seg no. 4
+dice(MAX,est(MAX)) 0.901 0.796 0.857 0.916 0.919 
+dice(MIN,est(MIN)) 0.951 0.916 0.921 0.915 0.910 
+dice(VAR,est(VAR)) 0.650 0.547 0.615 0.622 0.486 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 50538.909 17781.982 21364.069 24733.066 49650.669 
+percent_change 0.034 0.296 0.064 0.041 0.024 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 31951.031 10314.941 11294.073 16437.775 37863.951 
+percent_change 0.026 -0.075 0.041 -0.054 -0.109 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 31.295 23.256 25.087 35.871 48.615 
+percent_change -0.044 -0.179 -0.043 -0.079 -0.179 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 38.673 30.316 34.148 41.723 52.533 
+percent_change  0.108 0.293 0.170 0.048 0.033 
+vol_percent_low_diff -0.242 0.546 0.284 -1.359 0.625 
+vol_percent_upper_diff 0.981 0.197 0.389 2.904 -0.441 
+vol_percent_low_diff_estimated -0.210 0.511 0.313 -1.488 0.584 
+vol_percent_upper_diff_estimated 0.914 -0.157 0.300 2.743 -0.455 
+recist_percent_low_diff 0.115 0.226 0.147 0.132 0.167 
+recist_percent_upper_diff 0.280 0.682 0.460 0.143 0.097 
+recist_percent_low_diff_estimated 0.076 0.088 0.110 0.064 0.018 
+recist_percent_upper_diff_estimated 0.142 0.189 0.212 0.089 0.061 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 18587.878 7467.041 10069.996 8295.291 11786.718 
+percent_change 0.046 0.524 0.089 0.188 0.296 
+
+
+initialized with seg no. 5
+dice(MAX,est(MAX)) 0.904 0.857 0.859 0.923 0.894 
+dice(MIN,est(MIN)) 0.941 0.737 0.897 0.913 0.932 
+dice(VAR,est(VAR)) 0.636 0.437 0.577 0.638 0.462 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 51202.863 25669.556 22811.254 24084.412 46719.294 
+percent_change 0.021 -0.016 0.000 0.066 0.082 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 32818.732 16331.787 12654.255 16094.736 35372.772 
+percent_change -0.000 -0.703 -0.075 -0.032 -0.036 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 31.978 32.194 29.272 35.162 44.622 
+percent_change -0.067 -0.632 -0.217 -0.058 -0.082 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 39.157 38.242 37.588 40.721 49.317 
+percent_change  0.096 0.109 0.087 0.070 0.092 
+vol_percent_low_diff -0.206 0.711 0.363 -1.427 0.597 
+vol_percent_upper_diff 0.922 -0.239 0.234 3.017 -0.399 
+vol_percent_low_diff_estimated -0.206 0.508 0.316 -1.506 0.583 
+vol_percent_upper_diff_estimated 0.882 -0.227 0.234 2.750 -0.449 
+recist_percent_low_diff 0.124 0.423 0.255 0.103 0.097 
+recist_percent_upper_diff 0.266 0.255 0.275 0.182 0.189 
+recist_percent_low_diff_estimated 0.066 0.058 0.093 0.051 0.023 
+recist_percent_upper_diff_estimated 0.144 0.119 0.165 0.099 0.080 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 18384.132 9337.769 10156.999 7989.675 11346.521 
+percent_change 0.057 0.404 0.081 0.217 0.322 
+
+
+initialized with seg no. 6
+dice(MAX,est(MAX)) 0.909 0.782 0.848 0.911 0.892 
+dice(MIN,est(MIN)) 0.909 0.903 0.924 0.908 0.932 
+dice(VAR,est(VAR)) 0.609 0.559 0.587 0.644 0.470 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 56622.784 19780.884 20729.203 24680.051 46918.831 
+percent_change -0.083 0.217 0.092 0.043 0.078 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 35017.190 9049.072 11429.316 14566.656 34906.874 
+percent_change -0.067 0.057 0.029 0.066 -0.022 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 32.998 19.664 24.419 34.148 43.850 
+percent_change -0.101 0.003 -0.015 -0.027 -0.063 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 43.532 30.463 32.874 42.800 48.676 
+percent_change  -0.005 0.290 0.201 0.023 0.104 
+vol_percent_low_diff -0.142 0.460 0.282 -1.670 0.594 
+vol_percent_upper_diff 0.820 0.424 0.391 3.418 -0.395 
+vol_percent_low_diff_estimated -0.219 0.490 0.303 -1.495 0.585 
+vol_percent_upper_diff_estimated 0.970 0.115 0.264 3.227 -0.442 
+recist_percent_low_diff 0.163 0.110 0.098 0.084 0.075 
+recist_percent_upper_diff 0.210 0.935 0.543 0.206 0.217 
+recist_percent_low_diff_estimated 0.079 0.113 0.085 0.060 0.017 
+recist_percent_upper_diff_estimated 0.216 0.374 0.232 0.179 0.091 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 21605.594 10731.812 9299.887 10113.395 12011.957 
+percent_change -0.109 0.315 0.158 0.009 0.283 
+
+
+initialized with seg no. 7
+dice(MAX,est(MAX)) 0.923 0.816 0.857 0.913 0.897 
+dice(MIN,est(MIN)) 0.924 0.840 0.907 0.903 0.920 
+dice(VAR,est(VAR)) 0.623 0.479 0.588 0.614 0.451 
+possible 52295.681 25264.893 22822.453 25799.604 50882.940 
+possible_estimated 51779.905 20302.734 22755.262 24299.590 49069.347 
+percent_change 0.010 0.196 0.003 0.058 0.036 
+possible 32805.908 9591.064 11771.300 15589.534 34140.034 
+consensus_estimated 36238.240 12962.646 12451.821 15436.726 36805.515 
+percent_change -0.105 -0.352 -0.058 0.010 -0.078 
+recist_consensus 29.966 19.730 24.048 33.247 41.251 
+recist_consensus_estimated 34.319 24.724 26.805 34.229 46.533 
+percent_change -0.145 -0.253 -0.115 -0.030 -0.128 
+recist_possible 43.331 42.903 41.149 43.804 54.302 
+recist_possible_estimated 40.306 30.861 35.614 41.086 52.332 
+percent_change  0.070 0.281 0.135 0.062 0.036 
+vol_percent_low_diff -0.063 0.634 0.348 -1.532 0.614 
+vol_percent_upper_diff 0.695 -0.035 0.263 3.190 -0.425 
+vol_percent_low_diff_estimated -0.174 0.505 0.311 -1.507 0.584 
+vol_percent_upper_diff_estimated 0.678 -0.225 0.260 2.946 -0.446 
+recist_percent_low_diff 0.187 0.258 0.187 0.097 0.145 
+recist_percent_upper_diff 0.175 0.614 0.391 0.190 0.126 
+recist_percent_low_diff_estimated 0.069 0.070 0.094 0.070 0.035 
+recist_percent_upper_diff_estimated 0.093 0.161 0.204 0.116 0.085 
+var_volume 19489.773 15673.828 11051.153 10210.069 16742.907 
+var_volume_estimate 15541.666 7340.088 10303.441 8862.864 12263.832 
+percent_change 0.203 0.532 0.068 0.132 0.268 
+
+
+========== liver ==========
+initialized with seg no. 1
+dice(MAX,est(MAX)) 0.924 0.939 0.905 0.813 0.848 
+dice(MIN,est(MIN)) 0.948 0.917 0.868 0.926 0.910 
+dice(VAR,est(VAR)) 0.588 0.685 0.560 0.492 0.540 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 125735.271 7189.099 49807.644 29017.035 46126.400 
+percent_change -0.040 0.040 -0.080 -0.420 -0.267 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 91079.392 4574.881 31925.074 13825.884 24286.142 
+percent_change -0.043 0.044 -0.231 -0.031 -0.106 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 64.829 20.903 46.861 22.134 33.120 
+percent_change -0.034 -0.097 -0.137 -0.048 -0.036 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 73.117 24.261 59.368 32.647 44.053 
+percent_change  -0.004 -0.007 -0.045 -0.216 0.001 
+vol_percent_low_diff 0.156 0.139 -0.547 0.286 0.273 
+vol_percent_upper_diff 0.168 0.348 1.752 0.088 0.205 
+vol_percent_low_diff_estimated 0.120 0.177 -0.905 0.264 0.196 
+vol_percent_upper_diff_estimated 0.214 0.293 1.972 0.545 0.527 
+recist_percent_low_diff 0.072 0.158 0.168 0.133 0.100 
+recist_percent_upper_diff 0.079 0.064 0.148 0.103 0.241 
+recist_percent_low_diff_estimated 0.040 0.077 0.053 0.091 0.068 
+recist_percent_upper_diff_estimated 0.083 0.071 0.199 0.341 0.240 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 34655.879 2614.218 17882.569 15191.151 21840.258 
+percent_change -0.033 0.033 0.114 -1.164 -0.513 
+
+
+initialized with seg no. 2
+dice(MAX,est(MAX)) 0.925 0.942 0.908 0.793 0.826 
+dice(MIN,est(MIN)) 0.936 0.907 0.868 0.906 0.908 
+dice(VAR,est(VAR)) 0.563 0.670 0.563 0.415 0.474 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 130956.040 7283.426 50192.077 30252.615 43859.781 
+percent_change -0.083 0.028 -0.089 -0.481 -0.205 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 94627.565 4701.774 32450.467 14811.861 23708.928 
+percent_change -0.083 0.018 -0.251 -0.104 -0.080 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 65.719 22.131 46.988 23.018 33.483 
+percent_change -0.049 -0.161 -0.141 -0.090 -0.047 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 74.473 24.378 57.919 33.392 42.884 
+percent_change  -0.023 -0.012 -0.019 -0.243 0.027 
+vol_percent_low_diff 0.183 0.164 -0.512 0.325 0.264 
+vol_percent_upper_diff 0.131 0.308 1.689 0.028 0.220 
+vol_percent_low_diff_estimated 0.115 0.179 -0.892 0.255 0.205 
+vol_percent_upper_diff_estimated 0.225 0.271 1.927 0.521 0.471 
+recist_percent_low_diff 0.082 0.180 0.167 0.163 0.103 
+recist_percent_upper_diff 0.067 0.037 0.149 0.065 0.237 
+recist_percent_low_diff_estimated 0.037 0.047 0.050 0.087 0.061 
+recist_percent_upper_diff_estimated 0.091 0.049 0.171 0.325 0.203 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 36328.476 2581.652 17741.610 15440.754 20150.853 
+percent_change -0.083 0.045 0.121 -1.200 -0.396 
+
+
+initialized with seg no. 3
+dice(MAX,est(MAX)) 0.926 0.916 0.912 0.807 0.845 
+dice(MIN,est(MIN)) 0.945 0.903 0.875 0.907 0.915 
+dice(VAR,est(VAR)) 0.596 0.635 0.584 0.459 0.551 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 125165.136 7464.221 50386.430 29524.236 46128.277 
+percent_change -0.035 0.004 -0.093 -0.445 -0.268 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 89393.860 4302.005 32533.761 14023.079 23428.299 
+percent_change -0.023 0.101 -0.255 -0.045 -0.067 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 64.252 19.464 47.717 22.820 33.794 
+percent_change -0.025 -0.021 -0.158 -0.081 -0.057 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 72.760 25.096 59.152 33.254 47.572 
+percent_change  0.001 -0.042 -0.041 -0.238 -0.079 
+vol_percent_low_diff 0.145 0.090 -0.509 0.300 0.260 
+vol_percent_upper_diff 0.183 0.424 1.683 0.066 0.226 
+vol_percent_low_diff_estimated 0.125 0.182 -0.893 0.268 0.211 
+vol_percent_upper_diff_estimated 0.225 0.419 1.932 0.541 0.554 
+recist_percent_low_diff 0.064 0.111 0.182 0.166 0.182 
+recist_percent_upper_diff 0.088 0.123 0.129 0.061 0.127 
+recist_percent_low_diff_estimated 0.040 0.093 0.052 0.099 0.136 
+recist_percent_upper_diff_estimated 0.087 0.170 0.175 0.313 0.217 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 35771.275 3162.215 17852.669 15501.156 22699.978 
+percent_change -0.066 -0.169 0.115 -1.208 -0.572 
+
+
+initialized with seg no. 4
+dice(MAX,est(MAX)) 0.930 0.919 0.896 0.814 0.854 
+dice(MIN,est(MIN)) 0.937 0.912 0.888 0.925 0.892 
+dice(VAR,est(VAR)) 0.580 0.653 0.549 0.498 0.535 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 123863.674 7494.540 44645.555 28728.348 47042.433 
+percent_change -0.024 -0.000 0.032 -0.406 -0.293 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 90328.166 4377.243 30007.178 13538.973 24534.860 
+percent_change -0.034 0.086 -0.157 -0.009 -0.118 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 65.737 19.936 46.459 21.844 33.922 
+percent_change -0.049 -0.046 -0.128 -0.035 -0.061 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 73.609 24.979 55.638 32.322 44.679 
+percent_change  -0.011 -0.037 0.021 -0.204 -0.014 
+vol_percent_low_diff 0.149 0.105 -0.621 0.274 0.289 
+vol_percent_upper_diff 0.178 0.401 1.883 0.106 0.179 
+vol_percent_low_diff_estimated 0.120 0.182 -0.876 0.267 0.205 
+vol_percent_upper_diff_estimated 0.206 0.401 1.791 0.555 0.524 
+recist_percent_low_diff 0.080 0.125 0.150 0.125 0.121 
+recist_percent_upper_diff 0.069 0.106 0.172 0.113 0.212 
+recist_percent_low_diff_estimated 0.035 0.085 0.042 0.094 0.068 
+recist_percent_upper_diff_estimated 0.080 0.146 0.148 0.340 0.228 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 33535.508 3117.298 14638.377 15189.375 22507.573 
+percent_change 0.000 -0.153 0.275 -1.164 -0.559 
+
+
+initialized with seg no. 5
+dice(MAX,est(MAX)) 0.925 0.934 0.875 0.825 0.860 
+dice(MIN,est(MIN)) 0.947 0.914 0.919 0.910 0.900 
+dice(VAR,est(VAR)) 0.588 0.687 0.555 0.499 0.548 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 121891.583 7612.449 40606.866 28234.471 45465.655 
+percent_change -0.008 -0.016 0.119 -0.382 -0.249 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 88583.930 4584.988 26820.650 13427.940 24239.214 
+percent_change -0.014 0.042 -0.034 -0.001 -0.104 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 64.134 20.914 43.288 21.984 33.147 
+percent_change -0.023 -0.097 -0.051 -0.041 -0.037 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 72.361 25.050 53.215 32.321 44.080 
+percent_change  0.006 -0.040 0.064 -0.203 -0.000 
+vol_percent_low_diff 0.131 0.134 -0.796 0.272 0.271 
+vol_percent_upper_diff 0.203 0.354 2.194 0.110 0.208 
+vol_percent_low_diff_estimated 0.119 0.171 -0.858 0.271 0.196 
+vol_percent_upper_diff_estimated 0.213 0.376 1.813 0.533 0.509 
+recist_percent_low_diff 0.060 0.139 0.097 0.127 0.104 
+recist_percent_upper_diff 0.093 0.088 0.246 0.111 0.236 
+recist_percent_low_diff_estimated 0.038 0.056 0.051 0.091 0.071 
+recist_percent_upper_diff_estimated 0.086 0.131 0.167 0.337 0.236 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 33307.653 3027.462 13786.216 14806.531 21226.441 
+percent_change 0.007 -0.120 0.317 -1.109 -0.470 
+
+
+initialized with seg no. 6
+dice(MAX,est(MAX)) 0.910 0.936 0.893 0.811 0.854 
+dice(MIN,est(MIN)) 0.916 0.908 0.921 0.904 0.891 
+dice(VAR,est(VAR)) 0.454 0.670 0.603 0.462 0.525 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 139817.518 7221.664 41330.883 29004.599 46807.793 
+percent_change -0.156 0.036 0.104 -0.420 -0.286 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 101427.401 4503.013 27275.563 13809.895 24888.696 
+percent_change -0.161 0.059 -0.052 -0.030 -0.134 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 66.508 20.296 42.590 21.390 33.847 
+percent_change -0.061 -0.065 -0.034 -0.013 -0.059 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 76.552 24.497 52.406 31.705 46.365 
+percent_change  -0.051 -0.017 0.078 -0.181 -0.052 
+vol_percent_low_diff 0.228 0.126 -0.776 0.288 0.294 
+vol_percent_upper_diff 0.068 0.367 2.158 0.084 0.170 
+vol_percent_low_diff_estimated 0.104 0.178 -0.868 0.267 0.200 
+vol_percent_upper_diff_estimated 0.235 0.318 1.830 0.539 0.505 
+recist_percent_low_diff 0.094 0.122 0.076 0.104 0.158 
+recist_percent_upper_diff 0.053 0.110 0.275 0.139 0.161 
+recist_percent_low_diff_estimated 0.038 0.065 0.045 0.092 0.108 
+recist_percent_upper_diff_estimated 0.107 0.129 0.176 0.345 0.221 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 38390.117 2718.652 14055.319 15194.704 21919.097 
+percent_change -0.145 -0.005 0.303 -1.165 -0.518 
+
+
+initialized with seg no. 7
+dice(MAX,est(MAX)) 0.923 0.926 0.877 0.824 0.864 
+dice(MIN,est(MIN)) 0.944 0.892 0.919 0.909 0.897 
+dice(VAR,est(VAR)) 0.566 0.645 0.562 0.500 0.562 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 118047.895 7132.952 40363.392 28158.080 43911.402 
+percent_change 0.024 0.048 0.125 -0.378 -0.207 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 86537.213 4094.260 26532.325 13254.728 22914.908 
+percent_change 0.009 0.145 -0.023 0.012 -0.044 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 61.457 18.682 42.072 20.849 32.767 
+percent_change 0.019 0.020 -0.021 0.012 -0.025 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 69.838 24.241 51.659 31.209 43.752 
+percent_change  0.041 -0.006 0.091 -0.162 0.007 
+vol_percent_low_diff 0.109 0.042 -0.814 0.262 0.242 
+vol_percent_upper_diff 0.234 0.499 2.225 0.124 0.257 
+vol_percent_low_diff_estimated 0.117 0.181 -0.856 0.271 0.209 
+vol_percent_upper_diff_estimated 0.205 0.427 1.823 0.549 0.516 
+recist_percent_low_diff 0.021 0.081 0.064 0.078 0.090 
+recist_percent_upper_diff 0.138 0.162 0.291 0.173 0.255 
+recist_percent_low_diff_estimated 0.040 0.099 0.044 0.089 0.067 
+recist_percent_upper_diff_estimated 0.091 0.169 0.174 0.364 0.246 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 31510.682 3038.691 13831.066 14903.352 20996.494 
+percent_change 0.061 -0.124 0.315 -1.123 -0.454 
+
+
+initialized with seg no. 8
+dice(MAX,est(MAX)) 0.929 0.923 0.879 0.829 0.827 
+dice(MIN,est(MIN)) 0.938 0.880 0.816 0.920 0.870 
+dice(VAR,est(VAR)) 0.567 0.630 0.398 0.517 0.425 
+possible 120906.532 7491.171 46110.674 20431.929 36392.609 
+possible_estimated 126967.082 7683.195 56357.965 28188.281 49952.903 
+percent_change -0.050 -0.026 -0.222 -0.380 -0.373 
+possible 87365.054 4787.118 25932.182 13412.840 21954.762 
+consensus_estimated 93490.279 4270.563 36790.295 13520.320 27194.735 
+percent_change -0.070 0.108 -0.419 -0.008 -0.239 
+recist_consensus 62.669 19.062 41.198 21.110 31.969 
+recist_consensus_estimated 65.094 19.778 53.164 21.352 34.924 
+percent_change -0.039 -0.038 -0.290 -0.011 -0.092 
+recist_possible 72.829 24.095 56.835 26.856 44.077 
+recist_possible_estimated 74.939 25.660 64.834 31.717 45.899 
+percent_change  -0.029 -0.065 -0.141 -0.181 -0.041 
+vol_percent_low_diff 0.174 0.074 -0.354 0.273 0.341 
+vol_percent_upper_diff 0.143 0.449 1.408 0.108 0.093 
+vol_percent_low_diff_estimated 0.116 0.174 -0.921 0.267 0.183 
+vol_percent_upper_diff_estimated 0.200 0.486 1.943 0.528 0.500 
+recist_percent_low_diff 0.096 0.106 0.263 0.106 0.144 
+recist_percent_upper_diff 0.050 0.130 0.016 0.137 0.180 
+recist_percent_low_diff_estimated 0.061 0.073 0.049 0.096 0.065 
+recist_percent_upper_diff_estimated 0.081 0.203 0.159 0.343 0.229 
+var_volume 33541.478 2704.053 20178.492 7019.090 14437.847 
+var_volume_estimate 33476.803 3412.632 19567.670 14667.962 22758.168 
+percent_change 0.002 -0.262 0.030 -1.090 -0.576 
+
+
+========== kidney ==========
+initialized with seg no. 1
+dice(MAX,est(MAX)) 0.968 0.970 0.965 0.972 0.968 0.966 
+dice(MIN,est(MIN)) 0.971 0.963 0.971 0.972 0.958 0.959 
+dice(VAR,est(VAR)) 0.617 0.573 0.618 0.604 0.563 0.604 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 45548.760 46818.365 25387.573 40667.108 27405.600 44586.677 
+percent_change 0.001 0.046 0.059 0.047 0.053 0.025 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 39458.802 42263.979 22365.417 36436.535 24437.311 38388.739 
+percent_change -0.035 -0.062 -0.025 -0.015 -0.050 -0.055 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 56.330 65.021 64.992 60.987 60.135 67.056 
+percent_change -0.028 -0.044 -0.020 -0.004 -0.043 -0.037 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.749 67.176 67.783 63.156 60.605 68.018 
+percent_change  0.158 0.015 0.022 0.177 0.031 0.025 
+vol_percent_low_diff 0.305 0.319 0.175 0.228 0.356 0.337 
+vol_percent_upper_diff -0.168 -0.160 0.020 -0.083 -0.199 -0.167 
+vol_percent_low_diff_estimated 0.280 0.277 0.155 0.217 0.324 0.300 
+vol_percent_upper_diff_estimated -0.169 -0.199 -0.040 -0.126 -0.242 -0.187 
+recist_percent_low_diff 0.049 0.057 0.041 0.025 0.045 0.042 
+recist_percent_upper_diff 0.252 0.032 0.043 0.232 0.036 0.034 
+recist_percent_low_diff_estimated 0.023 0.016 0.022 0.020 0.004 0.006 
+recist_percent_upper_diff_estimated 0.054 0.017 0.020 0.014 0.004 0.008 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 6089.958 4554.386 3022.156 4230.573 2968.289 6197.938 
+percent_change 0.184 0.509 0.414 0.376 0.476 0.336 
+
+
+initialized with seg no. 2
+dice(MAX,est(MAX)) 0.968 0.981 0.963 0.975 0.966 0.967 
+dice(MIN,est(MIN)) 0.968 0.950 0.971 0.969 0.960 0.961 
+dice(VAR,est(VAR)) 0.598 0.556 0.588 0.594 0.543 0.622 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 45847.097 47701.198 25257.568 40891.020 27249.995 44549.118 
+percent_change -0.006 0.028 0.064 0.042 0.059 0.026 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 39862.526 43428.034 22606.201 37043.810 24566.367 38324.353 
+percent_change -0.045 -0.091 -0.036 -0.032 -0.055 -0.054 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 56.181 66.930 66.109 62.411 60.749 67.670 
+percent_change -0.025 -0.075 -0.038 -0.028 -0.054 -0.047 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.706 67.885 68.002 63.316 60.837 68.162 
+percent_change  0.159 0.004 0.019 0.175 0.027 0.023 
+vol_percent_low_diff 0.314 0.334 0.186 0.240 0.358 0.338 
+vol_percent_upper_diff -0.180 -0.178 0.007 -0.096 -0.202 -0.168 
+vol_percent_low_diff_estimated 0.283 0.273 0.156 0.216 0.323 0.302 
+vol_percent_upper_diff_estimated -0.175 -0.201 -0.057 -0.134 -0.249 -0.189 
+recist_percent_low_diff 0.053 0.074 0.046 0.034 0.052 0.048 
+recist_percent_upper_diff 0.248 0.013 0.038 0.220 0.029 0.027 
+recist_percent_low_diff_estimated 0.029 0.005 0.010 0.007 0.001 0.004 
+recist_percent_upper_diff_estimated 0.050 0.009 0.018 0.007 0.001 0.004 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 5984.571 4273.164 2651.367 3847.210 2683.628 6224.766 
+percent_change 0.198 0.539 0.486 0.432 0.526 0.333 
+
+
+initialized with seg no. 3
+dice(MAX,est(MAX)) 0.968 0.979 0.984 0.989 0.984 0.974 
+dice(MIN,est(MIN)) 0.966 0.953 0.946 0.949 0.937 0.942 
+dice(VAR,est(VAR)) 0.634 0.611 0.588 0.568 0.554 0.584 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 46860.669 47589.963 26682.129 42450.768 28565.629 46477.638 
+percent_change -0.028 0.030 0.011 0.005 0.013 -0.017 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 38896.998 41953.773 23853.149 38282.958 25329.642 39612.843 
+percent_change -0.020 -0.054 -0.093 -0.066 -0.088 -0.089 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 68.886 65.597 67.724 63.954 61.781 67.911 
+percent_change -0.257 -0.053 -0.063 -0.053 -0.072 -0.051 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 73.990 68.169 69.531 64.312 62.121 69.442 
+percent_change  -0.025 0.000 -0.003 0.162 0.007 0.005 
+vol_percent_low_diff 0.290 0.309 0.226 0.257 0.372 0.356 
+vol_percent_upper_diff -0.152 -0.148 -0.044 -0.117 -0.219 -0.191 
+vol_percent_low_diff_estimated 0.276 0.272 0.154 0.208 0.317 0.299 
+vol_percent_upper_diff_estimated -0.128 -0.174 -0.054 -0.122 -0.229 -0.178 
+recist_percent_low_diff 0.221 0.063 0.066 0.053 0.071 0.058 
+recist_percent_upper_diff 0.026 0.026 0.017 0.196 0.008 0.016 
+recist_percent_low_diff_estimated 0.020 0.013 0.007 0.002 0.004 0.011 
+recist_percent_upper_diff_estimated 0.052 0.026 0.020 0.003 0.001 0.012 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7963.671 5636.189 2828.979 4167.810 3235.988 6864.795 
+percent_change -0.067 0.392 0.452 0.385 0.428 0.265 
+
+
+initialized with seg no. 4
+dice(MAX,est(MAX)) 0.960 0.967 0.957 0.957 0.950 0.957 
+dice(MIN,est(MIN)) 0.978 0.966 0.975 0.974 0.967 0.969 
+dice(VAR,est(VAR)) 0.648 0.579 0.632 0.577 0.541 0.637 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 45334.887 46171.319 25046.082 40458.463 26381.264 43195.475 
+percent_change 0.006 0.059 0.071 0.052 0.089 0.055 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 37812.910 41353.729 21185.303 34464.586 22696.161 35875.377 
+percent_change 0.008 -0.039 0.029 0.040 0.025 0.014 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 54.870 65.209 63.781 68.227 57.891 65.002 
+percent_change -0.001 -0.047 -0.001 -0.124 -0.005 -0.006 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.856 66.783 68.379 76.079 60.443 67.732 
+percent_change  0.157 0.020 0.014 0.008 0.033 0.029 
+vol_percent_low_diff 0.272 0.305 0.124 0.180 0.306 0.288 
+vol_percent_upper_diff -0.130 -0.143 0.083 -0.025 -0.137 -0.106 
+vol_percent_low_diff_estimated 0.278 0.278 0.149 0.213 0.323 0.298 
+vol_percent_upper_diff_estimated -0.135 -0.193 0.006 -0.076 -0.213 -0.155 
+recist_percent_low_diff 0.032 0.053 0.025 0.180 0.023 0.020 
+recist_percent_upper_diff 0.275 0.036 0.060 0.035 0.060 0.057 
+recist_percent_low_diff_estimated 0.031 0.009 0.024 0.079 0.018 0.015 
+recist_percent_upper_diff_estimated 0.075 0.015 0.046 0.027 0.025 0.027 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7521.977 4817.591 3860.779 5993.878 3685.103 7320.098 
+percent_change -0.008 0.480 0.252 0.116 0.349 0.216 
+
+
+initialized with seg no. 5
+dice(MAX,est(MAX)) 0.968 0.975 0.979 0.974 0.963 0.968 
+dice(MIN,est(MIN)) 0.967 0.958 0.953 0.965 0.959 0.957 
+dice(VAR,est(VAR)) 0.635 0.595 0.590 0.600 0.559 0.637 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 46484.842 47203.772 26245.422 41243.851 27135.688 44542.986 
+percent_change -0.020 0.038 0.027 0.034 0.063 0.026 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 38909.396 42061.092 23471.375 36249.942 23803.093 37160.035 
+percent_change -0.020 -0.057 -0.076 -0.010 -0.022 -0.022 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 56.043 64.378 67.421 60.779 59.376 65.085 
+percent_change -0.023 -0.034 -0.058 -0.001 -0.030 -0.007 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 61.082 67.225 68.579 63.774 60.969 68.021 
+percent_change  0.154 0.014 0.011 0.169 0.025 0.025 
+vol_percent_low_diff 0.291 0.313 0.215 0.218 0.335 0.313 
+vol_percent_upper_diff -0.153 -0.152 -0.030 -0.070 -0.173 -0.136 
+vol_percent_low_diff_estimated 0.277 0.274 0.156 0.211 0.320 0.298 
+vol_percent_upper_diff_estimated -0.136 -0.185 -0.056 -0.102 -0.225 -0.159 
+recist_percent_low_diff 0.043 0.046 0.066 0.019 0.042 0.027 
+recist_percent_upper_diff 0.260 0.044 0.016 0.240 0.040 0.050 
+recist_percent_low_diff_estimated 0.021 0.014 0.012 0.018 0.012 0.021 
+recist_percent_upper_diff_estimated 0.067 0.030 0.005 0.031 0.014 0.023 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7575.445 5142.680 2774.048 4993.909 3332.595 7382.951 
+percent_change -0.015 0.445 0.462 0.263 0.411 0.209 
+
+
+initialized with seg no. 6
+dice(MAX,est(MAX)) 0.972 0.957 0.965 0.975 0.953 0.957 
+dice(MIN,est(MIN)) 0.968 0.968 0.967 0.962 0.968 0.965 
+dice(VAR,est(VAR)) 0.657 0.625 0.641 0.586 0.563 0.622 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 46387.204 45587.725 25708.008 41276.080 26665.187 43747.357 
+percent_change -0.017 0.071 0.047 0.033 0.079 0.043 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 39035.706 37509.840 21734.619 36417.876 23014.745 36154.384 
+percent_change -0.024 0.058 0.004 -0.014 0.012 0.006 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 54.377 60.829 63.899 59.588 56.448 65.301 
+percent_change 0.008 0.023 -0.003 0.019 0.020 -0.010 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.791 68.033 69.192 63.026 60.253 68.557 
+percent_change  0.158 0.002 0.002 0.178 0.036 0.017 
+vol_percent_low_diff 0.289 0.229 0.146 0.218 0.317 0.296 
+vol_percent_upper_diff -0.150 -0.049 0.056 -0.071 -0.151 -0.116 
+vol_percent_low_diff_estimated 0.273 0.273 0.149 0.207 0.325 0.301 
+vol_percent_upper_diff_estimated -0.136 -0.116 0.006 -0.101 -0.218 -0.154 
+recist_percent_low_diff 0.021 0.008 0.023 0.012 0.013 0.027 
+recist_percent_upper_diff 0.290 0.085 0.063 0.248 0.071 0.050 
+recist_percent_low_diff_estimated 0.028 0.031 0.020 0.030 0.033 0.017 
+recist_percent_upper_diff_estimated 0.087 0.083 0.061 0.026 0.032 0.032 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7351.499 8077.885 3973.389 4858.205 3650.442 7592.973 
+percent_change 0.015 0.129 0.230 0.283 0.355 0.187 
+
+
+initialized with seg no. 7
+dice(MAX,est(MAX)) 0.968 0.971 0.964 0.971 0.966 0.964 
+dice(MIN,est(MIN)) 0.971 0.962 0.968 0.969 0.956 0.961 
+dice(VAR,est(VAR)) 0.653 0.605 0.628 0.595 0.569 0.639 
+possible 45589.830 49072.841 26973.267 42684.858 28945.423 45716.501 
+possible_estimated 46022.225 46736.113 25513.916 40761.253 27268.432 43771.885 
+percent_change -0.009 0.048 0.054 0.045 0.058 0.043 
+possible 38128.295 39803.483 21814.270 35908.137 23283.182 36377.436 
+consensus_estimated 38682.350 41205.676 21911.316 36051.475 23750.733 36468.650 
+percent_change -0.015 -0.035 -0.004 -0.004 -0.020 -0.003 
+recist_consensus 54.794 62.277 63.719 60.717 57.628 64.644 
+recist_consensus_estimated 54.375 64.634 64.070 60.889 59.403 64.787 
+percent_change 0.008 -0.038 -0.006 -0.003 -0.031 -0.002 
+recist_possible 72.164 68.171 69.324 76.700 62.535 69.770 
+recist_possible_estimated 60.850 66.863 68.381 63.371 60.533 67.848 
+percent_change  0.157 0.019 0.014 0.174 0.032 0.028 
+vol_percent_low_diff 0.286 0.299 0.153 0.215 0.332 0.299 
+vol_percent_upper_diff -0.147 -0.135 0.047 -0.067 -0.170 -0.118 
+vol_percent_low_diff_estimated 0.276 0.274 0.149 0.212 0.319 0.297 
+vol_percent_upper_diff_estimated -0.138 -0.176 -0.009 -0.109 -0.218 -0.156 
+recist_percent_low_diff 0.026 0.047 0.029 0.021 0.033 0.023 
+recist_percent_upper_diff 0.282 0.044 0.057 0.236 0.049 0.055 
+recist_percent_low_diff_estimated 0.034 0.011 0.023 0.019 0.003 0.020 
+recist_percent_upper_diff_estimated 0.081 0.023 0.042 0.021 0.015 0.026 
+var_volume 7461.535 9269.358 5158.997 6776.721 5662.241 9339.065 
+var_volume_estimate 7339.875 5530.437 3602.600 4709.778 3517.698 7303.235 
+percent_change 0.016 0.403 0.302 0.305 0.379 0.218 
+
+
+========== brain ==========
+initialized with seg no. 1
+dice(MAX,est(MAX)) 0.927 0.865 
+dice(MIN,est(MIN)) 0.952 0.889 
+dice(VAR,est(VAR)) 0.419 0.451 
+possible 152785.420 22957.563 
+possible_estimated 132276.177 17722.964 
+percent_change 0.134 0.228 
+possible 112816.930 11912.942 
+consensus_estimated 117346.644 13580.918 
+percent_change -0.040 -0.140 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 77.613 32.954 
+percent_change -0.111 -0.147 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.191 34.380 
+percent_change  0.037 0.083 
+vol_percent_low_diff 0.686 0.739 
+vol_percent_upper_diff -0.574 -0.497 
+vol_percent_low_diff_estimated 0.673 0.702 
+vol_percent_upper_diff_estimated -0.631 -0.612 
+recist_percent_low_diff 0.112 0.145 
+recist_percent_upper_diff 0.046 0.116 
+recist_percent_low_diff_estimated 0.013 0.019 
+recist_percent_upper_diff_estimated 0.007 0.023 
+var_volume 39968.491 11044.621 
+var_volume_estimate 14929.533 4142.046 
+percent_change 0.626 0.625 
+
+
+initialized with seg no. 2
+dice(MAX,est(MAX)) 0.953 0.877 
+dice(MIN,est(MIN)) 0.934 0.874 
+dice(VAR,est(VAR)) 0.481 0.462 
+possible 152785.420 22957.563 
+possible_estimated 140079.618 18139.243 
+percent_change 0.083 0.210 
+possible 112816.930 11912.942 
+consensus_estimated 123824.716 13779.402 
+percent_change -0.098 -0.157 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 78.219 32.819 
+percent_change -0.120 -0.142 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.726 34.014 
+percent_change  0.030 0.093 
+vol_percent_low_diff 0.701 0.740 
+vol_percent_upper_diff -0.595 -0.499 
+vol_percent_low_diff_estimated 0.671 0.699 
+vol_percent_upper_diff_estimated -0.628 -0.604 
+recist_percent_low_diff 0.116 0.142 
+recist_percent_upper_diff 0.041 0.119 
+recist_percent_low_diff_estimated 0.010 0.020 
+recist_percent_upper_diff_estimated 0.009 0.015 
+var_volume 39968.491 11044.621 
+var_volume_estimate 16254.902 4359.841 
+percent_change 0.593 0.605 
+
+
+initialized with seg no. 3
+dice(MAX,est(MAX)) 0.943 0.927 
+dice(MIN,est(MIN)) 0.942 0.804 
+dice(VAR,est(VAR)) 0.456 0.409 
+possible 152785.420 22957.563 
+possible_estimated 137177.467 21277.785 
+percent_change 0.102 0.073 
+possible 112816.930 11912.942 
+consensus_estimated 121911.764 17217.278 
+percent_change -0.081 -0.445 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 78.723 33.979 
+percent_change -0.127 -0.183 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.918 35.736 
+percent_change  0.028 0.047 
+vol_percent_low_diff 0.697 0.785 
+vol_percent_upper_diff -0.590 -0.585 
+vol_percent_low_diff_estimated 0.673 0.689 
+vol_percent_upper_diff_estimated -0.632 -0.616 
+recist_percent_low_diff 0.121 0.177 
+recist_percent_upper_diff 0.034 0.073 
+recist_percent_low_diff_estimated 0.010 0.027 
+recist_percent_upper_diff_estimated 0.005 0.023 
+var_volume 39968.491 11044.621 
+var_volume_estimate 15265.703 4060.507 
+percent_change 0.618 0.632 
+
+
+initialized with seg no. 4
+dice(MAX,est(MAX)) 0.927 0.905 
+dice(MIN,est(MIN)) 0.953 0.842 
+dice(VAR,est(VAR)) 0.436 0.445 
+possible 152785.420 22957.563 
+possible_estimated 132412.791 19387.364 
+percent_change 0.133 0.156 
+possible 112816.930 11912.942 
+consensus_estimated 116597.414 15418.053 
+percent_change -0.034 -0.294 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 72.946 32.701 
+percent_change -0.044 -0.138 
+recist_possible 82.225 37.486 
+recist_possible_estimated 74.531 34.381 
+percent_change  0.094 0.083 
+vol_percent_low_diff 0.680 0.760 
+vol_percent_upper_diff -0.567 -0.538 
+vol_percent_low_diff_estimated 0.669 0.690 
+vol_percent_upper_diff_estimated -0.624 -0.610 
+recist_percent_low_diff 0.052 0.140 
+recist_percent_upper_diff 0.116 0.122 
+recist_percent_low_diff_estimated 0.010 0.021 
+recist_percent_upper_diff_estimated 0.012 0.029 
+var_volume 39968.491 11044.621 
+var_volume_estimate 15815.377 3969.312 
+percent_change 0.604 0.641 
+
+
+initialized with seg no. 5
+dice(MAX,est(MAX)) 0.958 0.816 
+dice(MIN,est(MIN)) 0.931 0.911 
+dice(VAR,est(VAR)) 0.481 0.436 
+possible 152785.420 22957.563 
+possible_estimated 141767.621 16117.573 
+percent_change 0.072 0.298 
+possible 112816.930 11912.942 
+consensus_estimated 126373.887 10798.931 
+percent_change -0.120 0.094 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 77.324 27.460 
+percent_change -0.107 0.044 
+recist_possible 82.225 37.486 
+recist_possible_estimated 78.505 32.599 
+percent_change  0.045 0.130 
+vol_percent_low_diff 0.707 0.675 
+vol_percent_upper_diff -0.604 -0.374 
+vol_percent_low_diff_estimated 0.672 0.705 
+vol_percent_upper_diff_estimated -0.632 -0.560 
+recist_percent_low_diff 0.104 0.041 
+recist_percent_upper_diff 0.054 0.251 
+recist_percent_low_diff_estimated 0.009 0.083 
+recist_percent_upper_diff_estimated 0.007 0.088 
+var_volume 39968.491 11044.621 
+var_volume_estimate 15393.734 5318.642 
+percent_change 0.615 0.518 
+
+
+initialized with seg no. 6
+dice(MAX,est(MAX)) 0.924 0.816 
+dice(MIN,est(MIN)) 0.952 0.910 
+dice(VAR,est(VAR)) 0.417 0.437 
+possible 152785.420 22957.563 
+possible_estimated 131690.025 16120.076 
+percent_change 0.138 0.298 
+possible 112816.930 11912.942 
+consensus_estimated 115660.071 10801.077 
+percent_change -0.025 0.093 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 74.904 27.529 
+percent_change -0.072 0.042 
+recist_possible 82.225 37.486 
+recist_possible_estimated 77.818 32.599 
+percent_change  0.054 0.130 
+vol_percent_low_diff 0.680 0.675 
+vol_percent_upper_diff -0.567 -0.374 
+vol_percent_low_diff_estimated 0.672 0.705 
+vol_percent_upper_diff_estimated -0.627 -0.560 
+recist_percent_low_diff 0.085 0.042 
+recist_percent_upper_diff 0.078 0.250 
+recist_percent_low_diff_estimated 0.018 0.082 
+recist_percent_upper_diff_estimated 0.020 0.087 
+var_volume 39968.491 11044.621 
+var_volume_estimate 16029.954 5318.999 
+percent_change 0.599 0.518 
+
+
+initialized with seg no. 7
+dice(MAX,est(MAX)) 0.949 0.923 
+dice(MIN,est(MIN)) 0.938 0.815 
+dice(VAR,est(VAR)) 0.489 0.432 
+possible 152785.420 22957.563 
+possible_estimated 139242.768 20916.939 
+percent_change 0.089 0.089 
+possible 112816.930 11912.942 
+consensus_estimated 121524.453 16695.857 
+percent_change -0.077 -0.401 
+recist_consensus 69.857 28.733 
+recist_consensus_estimated 77.775 34.422 
+percent_change -0.113 -0.198 
+recist_possible 82.225 37.486 
+recist_possible_estimated 79.809 36.081 
+percent_change  0.029 0.037 
+vol_percent_low_diff 0.695 0.780 
+vol_percent_upper_diff -0.587 -0.577 
+vol_percent_low_diff_estimated 0.672 0.692 
+vol_percent_upper_diff_estimated -0.624 -0.614 
+recist_percent_low_diff 0.114 0.190 
+recist_percent_upper_diff 0.043 0.057 
+recist_percent_low_diff_estimated 0.014 0.029 
+recist_percent_upper_diff_estimated 0.012 0.018 
+var_volume 39968.491 11044.621 
+var_volume_estimate 17718.315 4221.082 
+percent_change 0.557 0.618 
+
+
+>> 

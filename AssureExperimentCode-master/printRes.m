@@ -10,15 +10,15 @@ meanVals = [meanVals,mean(res.max_dice),mean(res.min_dice),mean(res.var_dice)];
 
 %g_ubound = ['min_area_bound ' sprintf('%.3f ', res.var_percentage_range_gt(2,:))];
 %g_ubounde_stimated = ['min_area_bound_estimated ' sprintf('%.3f ', res.var_percentage_range(2,:))];
-g_ubound = ['consensus ' sprintf('%.3f ', res.var_range_gt(2,:))];
-g_ubounde_stimated = ['consensus_estimated ' sprintf('%.3f ', res.var_range(2,:))];
+g_ubound = ['possible ' sprintf('%.3f ', res.var_range_gt(2,:))];
+g_ubounde_stimated = ['possible_estimated ' sprintf('%.3f ', res.var_range(2,:))];
 g_ubound_diff = ['percent_change ' sprintf('%.3f ', (res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))];
 meanVals = [meanVals,mean((res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))];
 
 %g_lbound = ['max_area_bound ' sprintf('%.3f ', res.var_percentage_range_gt(1,:))];
 %g_lbounde_stimated = ['max_area_bound_estimated ' sprintf('%.3f ', res.var_percentage_range(1,:))];
-g_lbound = ['possible ' sprintf('%.3f ', res.var_range_gt(1,:))];
-g_lbounde_stimated = ['possible_estimate ' sprintf('%.3f ', res.var_range(1,:))];
+g_lbound = ['consensus ' sprintf('%.3f ', res.var_range_gt(1,:))];
+g_lbounde_stimated = ['consensus_estimated ' sprintf('%.3f ', res.var_range(1,:))];
 g_lbound_diff = ['percent_change ' sprintf('%.3f ', (res.var_range_gt(1,:)-res.var_range(1,:)) ./ res.var_range_gt(1,:))];
 meanVals = [meanVals,mean((res.var_range_gt(1,:)-res.var_range(1,:))./res.var_range_gt(1,:))];
 
