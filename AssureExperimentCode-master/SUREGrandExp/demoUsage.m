@@ -21,7 +21,7 @@ imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesSh
 % imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortKydneys, mode3D);
 
 % for imNum = 1:size(imgCell, 2)
-imNum = 7;
+imNum = 1;
 %     %shows actual variability
 %     Utils.showVariability(imgCell{imNum})
 %     %shows annotation
