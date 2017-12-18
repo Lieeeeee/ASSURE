@@ -123,10 +123,10 @@ if(size(I,3)==3), I=rgb2gray(I); end
 % The contour must always be clockwise (because of the balloon force)
 P=MakeContourClockwise2D(P);
 
-% % Make an uniform sampled contour description
+% Make an uniform sampled contour description
 % P=InterpolateContourPoints2D(P,Options.nPoints);
 
-% sample Options.nPoints points from the contour
+% sample Options.nPoints points from the contour -- i added this on 18/12
 [P, actual_nPoints] = SampleContourPoints2D(P, Options.nPoints);
 Options.nPoints = actual_nPoints;
 
