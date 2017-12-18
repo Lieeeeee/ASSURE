@@ -123,8 +123,12 @@ if(size(I,3)==3), I=rgb2gray(I); end
 % The contour must always be clockwise (because of the balloon force)
 P=MakeContourClockwise2D(P);
 
-% Make an uniform sampled contour description
-P=InterpolateContourPoints2D(P,Options.nPoints);
+% % Make an uniform sampled contour description
+% P=InterpolateContourPoints2D(P,Options.nPoints);
+
+% sample Options.nPoints points from the contour
+[P, actual_nPoints] = SampleContourPoints2D(P, Options.nPoints);
+Options.nPoints = actual_nPoints;
 
 % Transform the Image into an External Energy Image
 Eext = ExternalForceImage2D(I,Options.Wline, Options.Wedge, Options.Wterm,Options.Sigma1);
