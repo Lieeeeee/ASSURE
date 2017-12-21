@@ -136,6 +136,28 @@ classdef VariabilityEstimator
             end
         end
         
+        function [varMask, varData, sensitivityMask] = evaluate3DVarMaskSnakes(im, seg, OptionsIn, OptionsOut)
+            % evaluates a variability mask, given a segmentation and its priors. 
+            varData = cell(size(im,3),1);
+            sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
+            varMask = false(size(seg));
+            
+            for z = find(sum(sum(seg,1),2) > 0)'
+                currentIm = im(:,:,z);
+                currentSeg = seg(:,:,z);
+                
+                % prepare the points
+                
+                
+                % first, apply active contour outwards, starting from the given segmentataion
+                bw_1 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_out, 'SmoothFactor', smooth_param_out);
+                
+                % next, apply active contour inwards, starting from the given segmentataion
+                bw_2 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_in, 'SmoothFactor', smooth_param_in);
+                
+                varMask(:,:,z) = (bw_1 | bw_2) - (bw_1 & bw_2); % bw_1 - bw_2
+            end
+        end
         
         function out = calcMeanShape(seg1,seg2)
             out = false(size(seg1));

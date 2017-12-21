@@ -1,3 +1,4 @@
+function [Xout,Yout,varargout]=PointsToContour(Xin,Yin,P,direction,varargin)
 %points2contour
 %Tristan Ursell
 %Sept 2013
@@ -142,8 +143,6 @@
 %title(['Black = original points, Blue = original ordering, Red = new ordering, Green = starting points'])
 %box on
 %
-
-function [Xout,Yout,varargout]=PointsToContour(Xin,Yin,P,direction,varargin)
 
 %check to make sure the vectors are the same length
 if length(Xin)~=length(Yin)
