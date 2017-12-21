@@ -1,23 +1,23 @@
-basefolder = '/cs/casmip/clara.herscu/git/thesis/SUREExperimentDataForUpload/';
-annotationDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesDirs);
-dataDir = [basefolder, 'data/'];
-mode3D = false;
-
-[ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
-imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
-
-imNum = 1;
-im = imgCell{imNum}.img;
-segs = imgCell{imNum}.masks;
-meanSeg = stapleWrapper(segs) > 0.5;
-
-% extracting only boundary points
-segBoundary = Utils.getBoundries(meanSeg);
-% getting their coordinates
-[row, col] = find(segBoundary);
-
+% basefolder = '/cs/casmip/clara.herscu/git/thesis/SUREExperimentDataForUpload/';
+% annotationDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesDirs);
+% dataDir = [basefolder, 'data/'];
+% mode3D = false;
+% 
+% [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
+% imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
+% 
+% imNum = 1;
+% im = imgCell{imNum}.img;
+% segs = imgCell{imNum}.masks;
+% meanSeg = stapleWrapper(segs) > 0.5;
+% 
+% % extracting only boundary points
+% segBoundary = Utils.getBoundries(meanSeg);
+% % getting their coordinates
+% [row, col] = find(segBoundary);
+% 
 % segPoints = [col(:) row(:)];
-
+% 
 % % displaying the points for debug purposes
 % imshow(im)
 % hold on
@@ -33,21 +33,45 @@ angles = atan2d((row-rowCenter), (col-colCenter));
 col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
 row_clockwise = row(sortedIndexes);
 
-
-
 segPoints = [col_clockwise(:) row_clockwise(:)];
+% % build distances matrix
+% D = squareform(pdist(segPoints)); % symmetric matrix of pairwise distances
+% reordered_ix = zeros(size(segPoints, 1), 1);
+% seen_ix = zeros(size(segPoints, 1), 1); % [];
+% for point_ix = 1:size(segPoints,1)-1
+% %     point_ix
+%     % sort points according to distance from current point
+%     [sorted_points, sorted_ix] = sort(D(point_ix, :));
+%     sorted_not_seen_ix = sorted_ix(~ismember(sorted_ix', [seen_ix; point_ix]));
+% %     sorted_not_seen_ix = sorted_ix(~ismember(sorted_ix', seen_ix));
+%     % find the second closest one (the closest one is this point itself)
+%     closest_ix_not_seen = sorted_not_seen_ix(1);
+%     reordered_ix(point_ix) = closest_ix_not_seen;
+%     seen_ix(point_ix + 1) = closest_ix_not_seen;
+% %     seen_ix = [seen_ix; closest_ix_not_seen];
+% end
+% reordered_ix(size(segPoints,1)) = 1;
+% % reorder according to what we found
+% col_sorted = col_clockwise(reordered_ix);
+% row_sorted = row_clockwise(reordered_ix);
+% 
+% segPoints = [col_sorted(:) row_sorted(:)];
+
+% using PointsToContour
+[Xout,Yout] = PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
+segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
 
 % displaying initial contour
 imshow(im);
 hold on
 plot(segPoints(:,1), segPoints(:,2), 'b');
 hold on 
-plot(rowCenter, colCenter, 'g+', 'MarkerSize', 15);
+plot(segPoints(1,1), segPoints(1,2), 'g+', 'MarkerSize', 15);
 
 % setting the options
 Options = struct;
 Options.Iterations = 1;
-Options.nPoints = 94;
+Options.nPoints = size(segPoints,1);
 Options.Delta = 1;
 Options.Verbose = true;
 Options.Wline = -0.04;
@@ -74,29 +98,29 @@ LineDisplay.displayMasks(im, J);
 % [smth] = interate(im, xs, ys, alpha, beta, gamma, kappa, wl, we, wt, iterations);
 
 %% % implementation 3
-% pnts = fliplr(segPoints);
-pnts = segPoints;
-% pnts = MakeContourClockwise2D(pnts);
-alpha = zeros(size(pnts, 1), 1); beta = zeros(size(pnts, 1), 1) + 0.001; 
-max_delta_x = 1; resol_x = 1; max_delta_y = 1; resol_y = 1; 
-% feat_img is a 2D-Array of the feature responses in the image.  For example it can contain the magnitude of the image gradients
-% let's try with just image
-feat_img = im;
-
-% now let's try gradient magnitude term
-Wline = -1; Wedge = 1;  Wterm = 1; Sigma = 0.01;
-Eextern = ExternalForceImage2D(im,Wline, Wedge, Wterm,Sigma);
-
-imshow(im);
-hold on
-plot(pnts(:,1), pnts(:,2), 'b.');
-% recreate the whole segmented area
-J = DrawSegmentedArea2D(P,size(im));
-LineDisplay.displayMasks(im, J);
-
-[snake_pnts,e] = snake(pnts, alpha, beta, max_delta_x, resol_x, max_delta_y, resol_y, Eextern);
-
-hold on
-plot(snake_pnts(:,1), snake_pnts(:,2), 'g.');
+% % pnts = fliplr(segPoints);
+% pnts = segPoints;
+% % pnts = MakeContourClockwise2D(pnts);
+% alpha = zeros(size(pnts, 1), 1); beta = zeros(size(pnts, 1), 1) + 0.001; 
+% max_delta_x = 1; resol_x = 1; max_delta_y = 1; resol_y = 1; 
+% % feat_img is a 2D-Array of the feature responses in the image.  For example it can contain the magnitude of the image gradients
+% % let's try with just image
+% feat_img = im;
+% 
+% % now let's try gradient magnitude term
+% Wline = -1; Wedge = 1;  Wterm = 1; Sigma = 0.01;
+% Eextern = ExternalForceImage2D(im,Wline, Wedge, Wterm,Sigma);
+% 
+% imshow(im);
+% hold on
+% plot(pnts(:,1), pnts(:,2), 'b.');
+% % recreate the whole segmented area
+% J = DrawSegmentedArea2D(P,size(im));
+% LineDisplay.displayMasks(im, J);
+% 
+% [snake_pnts,e] = snake(pnts, alpha, beta, max_delta_x, resol_x, max_delta_y, resol_y, Eextern);
+% 
+% hold on
+% plot(snake_pnts(:,1), snake_pnts(:,2), 'g.');
 
 
