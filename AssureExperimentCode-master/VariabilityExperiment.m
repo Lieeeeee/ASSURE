@@ -919,12 +919,13 @@ classdef VariabilityExperiment
             T = 1.5*std(single(im(erodedSeg)));
         end
         
-        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun, activeContourRun, segNumToUse)
+        function [resStrct,outMasks] = holdExperiment(imCell,intensPrSize,useMeanSegmentation,outDir, winLength,trivialRun, activeContourRun, segNumToUse, ...
+                OptionsIn, OptionsOut)
             
             if exist('outDir','var') && ~isempty(outDir) && ~exist('outDir','dir')
                 mkdir(outDir);
             end
-            if exist('segNumToUse', 'var')
+            if exist('segNumToUse', 'var') && segNumToUse > 0
                 useGivenSegmentation = true;
                 useMeanSegmentation = false;
             elseif ~exist('useMeanSegmentation','var') || isempty(useMeanSegmentation)
@@ -963,8 +964,10 @@ classdef VariabilityExperiment
                 %evaluates mask
                 if exist('trivialRun','var') && trivialRun
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskTrivial(im,logical(seg),pr,params,0.5);
-                elseif exist('activeContourRun', 'var') && activeContourRun
+                elseif exist('activeContourRun', 'var') && activeContourRun == 1
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg);
+                elseif exist('activeContourRun', 'var') && activeContourRun == 2
+                    varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskSnakes(im, seg, OptionsIn, OptionsOut);
                 else
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMask(im,logical(seg),pr,params,0.5);
                 end

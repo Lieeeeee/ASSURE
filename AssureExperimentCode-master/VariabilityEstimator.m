@@ -143,17 +143,20 @@ classdef VariabilityEstimator
             varMask = false(size(seg));
             
             for z = find(sum(sum(seg,1),2) > 0)'
-                currentIm = im(:,:,z);
                 currentSeg = seg(:,:,z);
                 
                 % prepare the points
+                [currentSegPoints] = Utils.getPointsOnContour(currentSeg);
                 
+                % update options.nPoints
+                OptionsIn.nPoints = size(currentSegPoints,1);
+                OptionsOut.nPoints = size(currentSegPoints,1);
                 
                 % first, apply active contour outwards, starting from the given segmentataion
-                bw_1 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_out, 'SmoothFactor', smooth_param_out);
+                [~, bw_1] = Snake2D(im,fliplr(currentSegPoints),OptionsOut);
                 
                 % next, apply active contour inwards, starting from the given segmentataion
-                bw_2 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_in, 'SmoothFactor', smooth_param_in);
+                [~, bw_2] = Snake2D(im,fliplr(currentSegPoints),OptionsIn);
                 
                 varMask(:,:,z) = (bw_1 | bw_2) - (bw_1 & bw_2); % bw_1 - bw_2
             end
