@@ -1,23 +1,23 @@
-% basefolder = '/cs/casmip/clara.herscu/git/thesis/SUREExperimentDataForUpload/';
-% annotationDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesDirs);
-% dataDir = [basefolder, 'data/'];
-% mode3D = false;
-% 
-% [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
-% imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
-% 
-% imNum = 1;
-% im = imgCell{imNum}.img;
-% segs = imgCell{imNum}.masks;
-% meanSeg = stapleWrapper(segs) > 0.5;
-% 
+basefolder = '/cs/casmip/clara.herscu/git/thesis/SUREExperimentDataForUpload/';
+annotationDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesDirs);
+dataDir = [basefolder, 'data/'];
+mode3D = false;
+
+[ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
+imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
+
+imNum = 7;
+im = imgCell{imNum}.img;
+segs = imgCell{imNum}.masks;
+meanSeg = stapleWrapper(segs) > 0.5;
+
 % % extracting only boundary points
 % segBoundary = Utils.getBoundries(meanSeg);
 % % getting their coordinates
 % [row, col] = find(segBoundary);
 % 
 % segPoints = [col(:) row(:)];
-% 
+
 % % displaying the points for debug purposes
 % imshow(im)
 % hold on
@@ -26,14 +26,14 @@
 %% % implementation 1 -- works, but contour points have to be ordered clockwise
 % order points
 % [row_clockwise, col_clockwise] = poly2cw(row_clockwise, col_clockwise);
-colCenter = mean(col);
-rowCenter = mean(row);
-angles = atan2d((row-rowCenter), (col-colCenter));
-[~, sortedIndexes] = sort(angles);
-col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
-row_clockwise = row(sortedIndexes);
-
-segPoints = [col_clockwise(:) row_clockwise(:)];
+% colCenter = mean(col);
+% rowCenter = mean(row);
+% angles = atan2d((row-rowCenter), (col-colCenter));
+% [~, sortedIndexes] = sort(angles);
+% col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
+% row_clockwise = row(sortedIndexes);
+% 
+% segPoints = [col_clockwise(:) row_clockwise(:)];
 % % build distances matrix
 % D = squareform(pdist(segPoints)); % symmetric matrix of pairwise distances
 % reordered_ix = zeros(size(segPoints, 1), 1);
@@ -56,10 +56,12 @@ segPoints = [col_clockwise(:) row_clockwise(:)];
 % row_sorted = row_clockwise(reordered_ix);
 % 
 % segPoints = [col_sorted(:) row_sorted(:)];
+% 
+% % using PointsToContour
+% [Xout,Yout] = PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
+% segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
 
-% using PointsToContour
-[Xout,Yout] = PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
-segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
+segPoints = Utils.getPointsOnContour(meanSeg);
 
 % displaying initial contour
 imshow(im);
@@ -68,18 +70,20 @@ plot(segPoints(:,1), segPoints(:,2), 'b');
 hold on 
 plot(segPoints(1,1), segPoints(1,2), 'g+', 'MarkerSize', 15);
 
-% setting the options
-Options = struct;
-Options.Iterations = 1;
-Options.nPoints = size(segPoints,1);
-Options.Delta = 1;
-Options.Verbose = true;
-Options.Wline = -0.04;
-Options.Kappa = -2;
-[O,J]=Snake2D(im,fliplr(segPoints),Options);
+[OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(1);
+% [O,J]=Snake2D(im,fliplr(segPoints),OptionsOut);
+% [O_in, J_in] = Snake2D(im,fliplr(segPoints),OptionsIn);
+% 
+% % view results
+% LineDisplay.displayMasks(im, J);
+% LineDisplay.displayMasks(im, J_in);
 
-% view results
-LineDisplay.displayMasks(im, J);
+varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(im, meanSeg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(im, varMask); 
+
+% display the true variability
+[~,~,trueVarMask] = Utils.calcUnionIntersection(imgCell{imNum}.masks);
+LineDisplay.displayVariabilityWithoutSeg(im, trueVarMask);
 %% % implementation 2 -- doesn't seem to work
 % % image: This is the image data
 % % xs, ys: The initial snake coordinates

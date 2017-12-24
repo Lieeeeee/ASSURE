@@ -1759,6 +1759,18 @@ classdef Utils
 %                 reordered_ix(count_seen) = closest_ix_not_seen;
                 seen_ix(count_seen) = closest_ix_not_seen;
             end
+%             for point_ix = 1:size(segPoints,1)-1
+%             %     point_ix
+%                 % sort points according to distance from current point
+%                 [sorted_points, sorted_ix] = sort(D(point_ix, :));
+%                 sorted_not_seen_ix = sorted_ix(~ismember(sorted_ix', [seen_ix; point_ix]));
+%             %     sorted_not_seen_ix = sorted_ix(~ismember(sorted_ix', seen_ix));
+%                 % find the second closest one (the closest one is this point itself)
+%                 closest_ix_not_seen = sorted_not_seen_ix(1);
+%                 reordered_ix(point_ix) = closest_ix_not_seen;
+%                 seen_ix(point_ix + 1) = closest_ix_not_seen;
+%             %     seen_ix = [seen_ix; closest_ix_not_seen];
+%             end
             reordered_ix = seen_ix;
             reordered_ix(size(segPoints,1)) = 1;
             % reorder according to what we found
@@ -1774,7 +1786,6 @@ classdef Utils
             % getting their coordinates
             [row, col] = find(segBoundary);
             
-            % ordering clockwise
             colCenter = mean(col);
             rowCenter = mean(row);
             angles = atan2d((row-rowCenter), (col-colCenter));

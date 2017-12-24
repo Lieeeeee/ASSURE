@@ -42,7 +42,7 @@ classdef SnakeOptions
 
             OptionsOut = struct;
             OptionsOut.Iterations = 2;
-            OptionsOut.Delta = 1;
+            OptionsOut.Delta = 0.5;
 %             OptionsOut.Wline = -0.01;
             OptionsOut.Kappa = -2;
             
