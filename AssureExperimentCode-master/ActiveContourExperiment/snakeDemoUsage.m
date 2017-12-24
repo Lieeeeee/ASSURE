@@ -6,7 +6,7 @@ mode3D = false;
 [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
 imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
 
-imNum = 7;
+imNum = 1;
 im = imgCell{imNum}.img;
 segs = imgCell{imNum}.masks;
 meanSeg = stapleWrapper(segs) > 0.5;

@@ -1769,25 +1769,29 @@ classdef Utils
         end
         
         function [segPoints] = getPointsOnContour(seg)
-            % extracting only boundary points
-            segBoundary = Utils.getBoundries(seg);
-            % getting their coordinates
-            [row, col] = find(segBoundary);
-            
-            % ordering clockwise
-            colCenter = mean(col);
-            rowCenter = mean(row);
-            angles = atan2d((row-rowCenter), (col-colCenter));
-            [~, sortedIndexes] = sort(angles);
-            col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
-            row_clockwise = row(sortedIndexes);
-            segPoints = [col_clockwise(:) row_clockwise(:)];
+%             % extracting only boundary points
+%             segBoundary = Utils.getBoundries(seg);
+%             % getting their coordinates
+%             [row, col] = find(segBoundary);
+%             
+%             % ordering clockwise
+%             colCenter = mean(col);
+%             rowCenter = mean(row);
+%             angles = atan2d((row-rowCenter), (col-colCenter));
+%             [~, sortedIndexes] = sort(angles);
+%             col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
+%             row_clockwise = row(sortedIndexes);
+%             segPoints = [col_clockwise(:) row_clockwise(:)];
+% 
+%             % using orderPointsByDistance
+%             segPoints = Utils.orderPointsByDistance(segPoints);
+% %             % using PointsToContour
+% %             [Xout,Yout] = Utils.PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
+% %             segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
 
-            % using orderPointsByDistance
-            segPoints = Utils.orderPointsByDistance(segPoints);
-%             % using PointsToContour
-%             [Xout,Yout] = Utils.PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
-%             segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
+            % using bwtraceboundary
+            [row1, col1] = find(seg, 1);
+            segPoints = fliplr(bwtraceboundary(seg, [row1 col1], 'N'));
         end
         
     end

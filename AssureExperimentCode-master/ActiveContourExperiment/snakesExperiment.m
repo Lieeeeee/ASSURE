@@ -1,7 +1,7 @@
 LOAD_DATA = true;
 DISPLAY = false;
-WINDOWS = true;
-DEBUG = true;
+WINDOWS = false;
+DEBUG = false;
 
 if LOAD_DATA
     load('chapter3Env.mat');
@@ -30,7 +30,7 @@ end
 
 %% using mean segmentations
 if (~WINDOWS)
-    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_dec17/experiment_171217/';
+    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_dec17/experiment_241217/';
     
     kernelSize = 2; Tlength = 3;
     [OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(DEBUG);
@@ -50,7 +50,7 @@ if (~WINDOWS)
 %     [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/'],Tlength,0,1);
 %     printRes(resBrain)
 
-    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_211217_meanSegInit.mat')
+    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_241217_meanSegInit.mat')
 else
     experiment_folder = 'C:\\Users\\User\\Documents\\University\\masters\\thesis\\VariabilityAssessment\\figs\\snakes_dec17\\211217_meanSeg\\';
     
