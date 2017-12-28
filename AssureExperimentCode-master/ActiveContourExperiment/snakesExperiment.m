@@ -30,36 +30,41 @@ end
 
 %% using mean segmentations
 if (~WINDOWS)
-    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_dec17/experiment_241217/';
+    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_dec17/experiment_271217/';
     
     kernelSize = 2; Tlength = 3;
-    [OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(DEBUG);
+    [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,2,0,...
-                                OptionsIn, OptionsOut);
+                                OptionsInLung, OptionsOutLung);
     printRes(resLung)
-    
 %     kernelSize = 4; Tlength = 3;
-%     resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/'],Tlength,0,1);
+%     [OptionsInLiver, OptionsOutLiver] = SnakeOptions.getLiverOptions(DEBUG);
+%     resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/'],Tlength,0,2,0,...
+%                                 OptionsInLiver, OptionsOutLiver);
 %     printRes(resLiver)
 % 
 %     kernelSize = 3; Tlength = 7;
-%     [resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[experiment_folder 'kidney/'],Tlength,0,1);
+%     [OptionsInKidney, OptionsOutKidney] = SnakeOptions.getKidneyOptions(DEBUG);
+%     [resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[experiment_folder 'kidney/'],Tlength,0,2,0,...
+%                                 OptionsInKidney, OptionsOutKidney);
 %     printRes(resKidney)
 % 
 %     kernelSize = 3; Tlength = 5;
-%     [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/'],Tlength,0,1);
+%     [OptionsInBrain, OptionsOutBrain] = SnakeOptions.getBrainOptions(DEBUG);
+%     [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain_2/'],Tlength,0,2,0,...
+%                                 OptionsInBrain, OptionsOutBrain);
 %     printRes(resBrain)
 
-    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_241217_meanSegInit.mat')
+    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_271217_meanSegInit.mat')
 else
-    experiment_folder = 'C:\\Users\\User\\Documents\\University\\masters\\thesis\\VariabilityAssessment\\figs\\snakes_dec17\\211217_meanSeg\\';
-    
-    kernelSize = 2; Tlength = 3;
-    
-    [OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(DEBUG);
-    [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung\\'],Tlength,0,2,0,...
-                                OptionsIn, OptionsOut);
-    printRes(resLung)
+%     experiment_folder = 'C:\\Users\\User\\Documents\\University\\masters\\thesis\\VariabilityAssessment\\figs\\snakes_dec17\\211217_meanSeg\\';
+%     
+%     kernelSize = 2; Tlength = 3;
+%     
+%     [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
+%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung\\'],Tlength,0,2,0,...
+%                                 OptionsInLung, OptionsOutLung);
+%     printRes(resLung)
     
 %     kernelSize = 4; Tlength = 3;
 %     resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver\\'],Tlength,0,1);

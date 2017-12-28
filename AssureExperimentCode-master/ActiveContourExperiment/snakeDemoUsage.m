@@ -3,10 +3,23 @@ annotationDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesD
 dataDir = [basefolder, 'data/'];
 mode3D = false;
 
+% lung
 [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.lungs, SUREExperimentCls.windowingLungs);
 imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortLungs, mode3D);
 
-imNum = 1;
+% % liver
+% [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.livers, SUREExperimentCls.windowingLivers);
+% imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.sliceLongLivers, mode3D);
+
+% % kidney
+% [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.kidneys, SUREExperimentCls.windowingKidneys);
+% imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.sliceLongKydneys, mode3D);
+
+% % brain
+% [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.brains, SUREExperimentCls.windowingBrains);
+% imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.sliceLongBrains, mode3D);
+
+imNum = 10;
 im = imgCell{imNum}.img;
 segs = imgCell{imNum}.masks;
 meanSeg = stapleWrapper(segs) > 0.5;
@@ -60,23 +73,28 @@ meanSeg = stapleWrapper(segs) > 0.5;
 % % using PointsToContour
 % [Xout,Yout] = PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
 % segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
-
-segPoints = Utils.getPointsOnContour(meanSeg);
-
-% displaying initial contour
-imshow(im);
-hold on
-plot(segPoints(:,1), segPoints(:,2), 'b');
-hold on 
-plot(segPoints(1,1), segPoints(1,2), 'g+', 'MarkerSize', 15);
-
-[OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(1);
+% 
+% segPoints = Utils.getPointsOnContour(meanSeg);
+% 
+% % displaying initial contour
+% imshow(im);
+% hold on
+% plot(segPoints(:,1), segPoints(:,2), 'b');
+% hold on 
+% plot(segPoints(1,1), segPoints(1,2), 'g+', 'MarkerSize', 15);
 % [O,J]=Snake2D(im,fliplr(segPoints),OptionsOut);
 % [O_in, J_in] = Snake2D(im,fliplr(segPoints),OptionsIn);
 % 
 % % view results
 % LineDisplay.displayMasks(im, J);
 % LineDisplay.displayMasks(im, J_in);
+
+% % lung
+[OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(1);
+% % liver
+% [OptionsIn, OptionsOut] = SnakeOptions.getLiverOptions(1);
+% kidney
+% [OptionsIn, OptionsOut] = SnakeOptions.getBrainOptions(false);
 
 varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(im, meanSeg, OptionsIn, OptionsOut);
 LineDisplay.displayVariabilityWithoutSeg(im, varMask); 

@@ -36,20 +36,91 @@ classdef SnakeOptions
         function [OptionsIn, OptionsOut] = getLungOptions(DEBUG)
             OptionsIn = struct;
             OptionsIn.Iterations = 2;
+            OptionsIn.Delta = -0.5;
 %             OptionsIn.Delta = 1;
 %             OptionsIn.Wline = -0.04;
 %             OptionsIn.Kappa = -2;
 
             OptionsOut = struct;
-            OptionsOut.Iterations = 2;
-            OptionsOut.Delta = 0.5;
-%             OptionsOut.Wline = -0.01;
-            OptionsOut.Kappa = -2;
+            OptionsOut.Iterations = 5;
+            OptionsOut.Delta = 1;
+            OptionsOut.Wline = -0.01;
+%             OptionsOut.Kappa = -2;
+            OptionsOut.Wterm = 0.1;
             
             if(DEBUG)
                 OptionsIn.Verbose = true;
                 OptionsOut.Verbose = true;
             end
+        end
+        
+        function [OptionsIn, OptionsOut] = getLiverOptions(DEBUG)
+            OptionsIn = struct;
+            OptionsIn.Iterations = 2;
+            OptionsIn.Delta = -0.05;
+            OptionsIn.Wline = -0.5;
+
+            OptionsOut = struct;
+            OptionsOut.Iterations = 2;
+            OptionsOut.Delta = 1;
+            OptionsOut.Kappa = -2;
+            OptionsOut.Wterm = 0.1;
+            
+            if(DEBUG)
+                OptionsIn.Verbose = true;
+                OptionsOut.Verbose = true;
+            end
+        end
+        
+        function [OptionsIn, OptionsOut] = getKidneyOptions(DEBUG)
+            OptionsIn = struct;
+            OptionsIn.Iterations = 2;
+            OptionsIn.Delta = -0.5;
+
+            OptionsOut = struct;
+            OptionsOut.Iterations = 2;
+            OptionsOut.Delta = 1;
+            OptionsOut.Kappa = -2;
+            OptionsOut.Wterm = 0.1;
+            
+            if(DEBUG)
+                OptionsIn.Verbose = true;
+                OptionsOut.Verbose = true;
+            end
+        end
+        
+        function [OptionsIn, OptionsOut] = getBrainOptions(DEBUG)
+            OptionsIn = struct;
+            OptionsIn.Iterations = 5;
+            OptionsIn.Delta = -0.5;
+
+            OptionsOut = struct;
+            OptionsOut.Iterations = 2;
+            OptionsOut.Delta = 1;
+            OptionsOut.Kappa = -2;
+            OptionsOut.Wterm = 0.1;
+            
+            if(DEBUG)
+                OptionsIn.Verbose = true;
+                OptionsOut.Verbose = true;
+            end
+        end
+        
+        function [OptionsStruct] = getAllOptions(DEBUG)
+            OptionsStruct = struct;
+            
+            % lung
+            [OptionsIn, OptionsOut] = SnakeOptions.getLungOptions(DEBUG);
+            OptionsStruct.LungOptions = {OptionsIn, OptionsOut};
+            % liver
+            [OptionsIn, OptionsOut] = SnakeOptions.getLiverOptions(DEBUG);
+            OptionsStruct.LiverOptions = {OptionsIn, OptionsOut};
+            % kidney
+            [OptionsIn, OptionsOut] = SnakeOptions.getKidneyOptions(DEBUG);
+            OptionsStruct.KidneyOptions = {OptionsIn, OptionsOut};
+            % brain
+            [OptionsIn, OptionsOut] = SnakeOptions.getBrainOptions(DEBUG);
+            OptionsStruct.BrainOptions = {OptionsIn, OptionsOut};
         end
     end
     
