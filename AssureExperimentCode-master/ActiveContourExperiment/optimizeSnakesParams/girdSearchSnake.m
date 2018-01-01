@@ -28,7 +28,10 @@ function [] = girdSearchSnake( imgCell, experiment_folder, kernelSize, Tlength )
         iterationsOut, WlineOut, WedgeOut, WtermOut, alphaOut, betaOut, deltaOut, kappaOut] = ...
         ndgrid(iter_range, Wline_range, Wedge_range, Wterm_range, alpha_range, beta_range, delta_range, kappa_range, ...
         iter_range, Wline_range, Wedge_range, Wterm_range, alpha_range, beta_range, delta_range, kappa_range);
-    
+%     even this is too big
+%     [iterationsIn, WlineIn, WedgeIn, WtermIn, alphaIn, betaIn, deltaIn, kappaIn] = ...
+%         ndgrid(iter_range, Wline_range, Wedge_range, Wterm_range, alpha_range, beta_range, delta_range, kappa_range);
+
     % open file for all the experiments to write to
     outputFileAll = [experiment_folder '/gridSearch.csv'];
     fid = fopen(outputFileAll, 'w');
