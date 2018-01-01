@@ -40,17 +40,12 @@ classdef SnakeOptions
             end
         end
         
-        function [Options] = getSpecifiedOptions(DEBUG, iter, sig1, Wl, We, Wt, sig2, m, GIter, sig3, al, be, del, kap)
+        function [Options] = getSpecifiedOptions(DEBUG, iter, Wl, We, Wt, al, be, del, kap)
             Options = SnakeOptions.getEmptyOptions(DEBUG);
             Options.Iterations = iter; 
-            Options.Sigma1 = sig1;
             Options.Wline = Wl;
             Options.Wedge = We;
             Options.Wterm = Wt;
-            Options.Sigma2 = sig2;
-            Options.Mu = m;
-            Options.GIterations = GIter;
-            Options.Sigma3 = sig3;
             Options.Alpha = al;
             Options.Beta = be;
             Options.Delta = del;
