@@ -1742,7 +1742,6 @@ classdef Utils
             col_clockwise = segPoints(:, 1); row_clockwise = segPoints(:, 2); 
             % build distances matrix
             D = squareform(pdist(segPoints)); % symmetric matrix of pairwise distances
-%             reordered_ix = zeros(size(segPoints, 1), 1);
             seen_ix = zeros(size(segPoints, 1), 1); % [];
             count_seen = 1;
             seen_ix(1) = 1;
@@ -1756,7 +1755,6 @@ classdef Utils
                 closest_ix_not_seen = sorted_not_seen_ix(1);
                 % save result for later
                 count_seen = count_seen + 1;
-%                 reordered_ix(count_seen) = closest_ix_not_seen;
                 seen_ix(count_seen) = closest_ix_not_seen;
             end
             reordered_ix = seen_ix;
@@ -1769,31 +1767,10 @@ classdef Utils
         end
         
         function [segPoints] = getPointsOnContour(seg)
-%             % extracting only boundary points
-%             segBoundary = Utils.getBoundries(seg);
-%             % getting their coordinates
-%             [row, col] = find(segBoundary);
-%             
-%             % ordering clockwise
-%             colCenter = mean(col);
-%             rowCenter = mean(row);
-%             angles = atan2d((row-rowCenter), (col-colCenter));
-%             [~, sortedIndexes] = sort(angles);
-%             col_clockwise = col(sortedIndexes);  % Reorder x and y with the new sort order.
-%             row_clockwise = row(sortedIndexes);
-%             segPoints = [col_clockwise(:) row_clockwise(:)];
-% 
-%             % using orderPointsByDistance
-%             segPoints = Utils.orderPointsByDistance(segPoints);
-% %             % using PointsToContour
-% %             [Xout,Yout] = Utils.PointsToContour(segPoints(:,1),segPoints(:,2),1,'cw');
-% %             segPoints = [[Xout(:); Xout(1)] [Yout(:); Yout(1)]];
-
             % using bwtraceboundary
             [row1, col1] = find(seg, 1);
             segPoints = fliplr(bwtraceboundary(seg, [row1 col1], 'N'));
         end
-        
     end
     
 end

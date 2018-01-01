@@ -33,6 +33,30 @@ classdef SnakeOptions
     end
     
     methods(Static)
+        function [Options] = getEmptyOptions(DEBUG)
+            Options = struct;
+            if(DEBUG)
+                Options.Verbose = true;
+            end
+        end
+        
+        function [Options] = getSpecifiedOptions(DEBUG, iter, sig1, Wl, We, Wt, sig2, m, GIter, sig3, al, be, del, kap)
+            Options = SnakeOptions.getEmptyOptions(DEBUG);
+            Options.Iterations = iter; 
+            Options.Sigma1 = sig1;
+            Options.Wline = Wl;
+            Options.Wedge = We;
+            Options.Wterm = Wt;
+            Options.Sigma2 = sig2;
+            Options.Mu = m;
+            Options.GIterations = GIter;
+            Options.Sigma3 = sig3;
+            Options.Alpha = al;
+            Options.Beta = be;
+            Options.Delta = del;
+            Options.Kappa = kap;
+        end
+        
         function [OptionsIn, OptionsOut] = getLungOptions(DEBUG)
             OptionsIn = struct;
             OptionsIn.Iterations = 2;
