@@ -937,7 +937,7 @@ classdef VariabilityExperiment
             outMasks = cell(size(imCell));
             resStrct = struct;
             for t=1:N
-                t
+%                 t
 
                 if useMeanSegmentation
                     %seg = Utils.calcSegCellSum(imCell{t}.masks) > length(imCell{t}.masks)/2;
