@@ -30,7 +30,7 @@ end
 
 %% using mean segmentations
 if (~WINDOWS)
-    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_dec17/experiment_271217/';
+    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_040118/';
     
     kernelSize = 2; Tlength = 3;
     [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
@@ -55,7 +55,7 @@ if (~WINDOWS)
 %                                 OptionsInBrain, OptionsOutBrain);
 %     printRes(resBrain)
 
-    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_271217_meanSegInit.mat')
+    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_040117_meanSegInit.mat')
 else
 %     experiment_folder = 'C:\\Users\\User\\Documents\\University\\masters\\thesis\\VariabilityAssessment\\figs\\snakes_dec17\\211217_meanSeg\\';
 %     

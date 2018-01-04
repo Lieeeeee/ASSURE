@@ -1,14 +1,24 @@
-% use fminsearch in order to find a local minima of the Pve
+%% use fminsearch in order to find a local minima of the Pve
 
-% init_it_in = 2; init_wline_in = 0.04; init_wedge_in = 2.0; init_wterm_in = 0.01; init_alpha_in = 0.2;
-% init_beta_in = 0.2; init_delta_in = -0.5; init_kappa_in = 2; 
-% init_it_out = 3; init_wline_out = -0.04; init_wedge_out = -2.0; init_wterm_out = -0.01; init_alpha_out = 0.2;
-% init_beta_out = 0.2; init_delta_out = 0.5; init_kappa_out = 2; 
-% initial_population = [init_it_in, init_wline_in, init_wedge_in, init_wterm_in, init_alpha_in, init_beta_in, init_delta_in, init_kappa_in, ...
-%     init_it_out, init_wline_out, init_wedge_out, init_wterm_out, init_alpha_out, init_beta_out, init_delta_out, init_kappa_out];
-
-x2.4681    0.0335    2.1094    0.0087    0.1630    0.1695   -0.5741    2.2859    3.5710   -0.0603   -2.0657   -0.0072    0.1353    0.2526    0.4637    3.1352
+% previous good params, resulted in loss of 0.0523!
+initial_population = [2.5451    0.0334    2.1619    0.0088    0.1600    0.1711   -0.5740    2.3761    3.5504   -0.0586   -2.0904   -0.0071    0.1349    0.2608    0.4343    3.0997];
 
 options = optimset('Display','iter');
 
 [x, fval] = fminsearch(@getPveBasedLoss, initial_population, options);
+
+%% save resulting experiment
+experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_040118/';
+load('chapter3Env.mat');
+imgCell = lungImgCell3D;
+% prepare the parameters for the experiment
+kernelSize = 2; Tlength = 3;
+SNAKE_RUN = 2;
+TRIVIAL_RUN = 0;
+SEGNUM_TO_USE = 0;
+DEBUG = false;
+% create an Options struct for in and out
+iterIn = x(1); WlIn = x(2); WeIn = x(3); WtIn = x(4); alIn = x(5); beIn = x(6); delIn = x(7); kapIn = x(8);
+iterOut = x(9); WlOut = x(10); WeOut = params(11); WtOut = params(12); alOut = params(13); beOut = params(14); delOut = params(15); kapOut = params(16);
+OptionsIn = SnakeOptions.getSpecifiedOptions(DEBUG, iterIn, WlIn, WeIn, WtIn, alIn, beIn, delIn, kapIn);
+OptionsOut = SnakeOptions.getSpecifiedOptions(DEBUG, iterOut, WlOut, WeOut, WtOut, alOut, beOut, delOut, kapOut);

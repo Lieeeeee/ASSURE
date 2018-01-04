@@ -53,25 +53,13 @@ classdef SnakeOptions
         end
         
         function [OptionsIn, OptionsOut] = getLungOptions(DEBUG)
-            OptionsIn = struct;
-            OptionsIn.Iterations = 2;
-            OptionsIn.Delta = -0.5;
-%             OptionsIn.Delta = 1;
-%             OptionsIn.Wline = -0.04;
-%             OptionsIn.Kappa = -2;
-
-            OptionsOut = struct;
-            OptionsOut.Iterations = 3;
-            OptionsOut.Delta = 0.5;
-            OptionsOut.Wline = -0.04;
-%             OptionsOut.Kappa = -2;
-            OptionsOut.Wterm = -0.01;
-            OptionsOut.Wedge = -2;
+            params = [2.5451    0.0334    2.1619    0.0088    0.1600    0.1711   -0.5740    2.3761    3.5504   -0.0586   -2.0904   -0.0071    0.1349    0.2608    0.4343    3.0997];
             
-            if(DEBUG)
-                OptionsIn.Verbose = true;
-                OptionsOut.Verbose = true;
-            end
+            iterIn = params(1); WlIn = params(2); WeIn = params(3); WtIn = params(4); alIn = params(5); beIn = params(6); delIn = params(7); kapIn = params(8);
+            OptionsIn = SnakeOptions.getSpecifiedOptions(DEBUG, iterIn, WlIn, WeIn, WtIn, alIn, beIn, delIn, kapIn);
+            
+            iterOut = params(9); WlOut = params(10); WeOut = params(11); WtOut = params(12); alOut = params(13); beOut = params(14); delOut = params(15); kapOut = params(16);
+            OptionsOut = SnakeOptions.getSpecifiedOptions(DEBUG, iterOut, WlOut, WeOut, WtOut, alOut, beOut, delOut, kapOut);
         end
         
         function [OptionsIn, OptionsOut] = getLiverOptions(DEBUG)
