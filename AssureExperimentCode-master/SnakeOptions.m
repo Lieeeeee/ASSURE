@@ -53,8 +53,10 @@ classdef SnakeOptions
         end
         
         function [OptionsIn, OptionsOut] = getLungOptions(DEBUG)
-            params = [2.5451    0.0334    2.1619    0.0088    0.1600    0.1711   -0.5740    2.3761    3.5504   -0.0586   -2.0904   -0.0071    0.1349    0.2608    0.4343    3.0997];
-            
+%             params = [2.5451    0.0334    2.1619    0.0088    0.1600    0.1711   -0.5740    2.3761    3.5504   -0.0586   -2.0904   -0.0071    0.1349    0.2608    0.4343    3.0997];
+%             params = [2.9388    0.0377    1.5447    0.0108    0.1367    0.1681   -0.2971    2.6419    3.0931   -0.0576   -2.6526   -0.0094    0.1291    0.1801    0.5126    3.3646]; % multiple objectives
+%             params = [2.7192    0.0539    1.4224    0.0305    0.0481   -0.0115   -0.7977    1.0008    3.9976   -0.0342    0.1349   -0.0114    0.2256    0.2467    0.8433    0.2744]; % dice objective
+            params = [2.5289    0.0452    1.3843    0.0081    0.2009    0.0939   -0.4978    1.9144    3.4726   -0.0506   -2.3274   -0.0077    0.1705    0.1364    0.4721    3.6061]; % multiple objectives with 1/dice
             iterIn = params(1); WlIn = params(2); WeIn = params(3); WtIn = params(4); alIn = params(5); beIn = params(6); delIn = params(7); kapIn = params(8);
             OptionsIn = SnakeOptions.getSpecifiedOptions(DEBUG, iterIn, WlIn, WeIn, WtIn, alIn, beIn, delIn, kapIn);
             

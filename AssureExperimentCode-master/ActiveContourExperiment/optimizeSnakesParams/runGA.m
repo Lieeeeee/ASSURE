@@ -37,5 +37,5 @@ generations = 10*nvars;
 options = optimoptions(@gamultiobj, 'PlotFcn', @gaplotpareto, 'InitialPopulationMatrix', initial_population, 'Display', 'iter', 'MaxGenerations', generations);
 
 % calling ga still without setting constraints
-[x,fval,exitflag,output,population,scores] = gamultiobj(@getPveBasedLoss, 2*nvars, [],[],[],[],[],[],[], options);
+[x,fval,exitflag,output,population,scores] = gamultiobj(@getMultipleObjectiveLoss, 2*nvars, [],[],[],[],[],[],[], options);
 
