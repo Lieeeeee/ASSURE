@@ -1014,16 +1014,20 @@ classdef VariabilityExperiment
                 %display variability
                 if exist('outDir','var') && ~isempty(outDir)
                     close all;
-                    LineDisplay.displayVariability(im,seg,pr,zeros(size(varMaskEstimated)));
+                    % display only segmentation without uncertainty region
+                    LineDisplay.displayVariabilityFromMask(im, seg, varMaskEstimated, false);
                     im0 = LineDisplay.getCroppedFrameFromFigure();
                     close all;
-                    LineDisplay.displayVariability(im,seg,pr,varMaskEstimated);
+                    % display segmentation and estimated uncertainty region
+                    LineDisplay.displayVariabilityFromMask(im, seg, varMaskEstimated, true);
                     im1 = LineDisplay.getCroppedFrameFromFigure();
                     close all;
+                    % display segmentation and ground truth uncertainty region
                     LineDisplay.displaySegsOverlay(im,seg,uncertaintyMask);
                     im2 = LineDisplay.getCroppedFrameFromFigure();
                     close all
-                    LineDisplay.displaySegsOverlay(im,zeros(size(im)));
+                    % display only image without segmentation or uncertainty region
+                    LineDisplay.displaySegsOverlay(im,zeros(size(im))); 
                     resizedIm = LineDisplay.getCroppedFrameFromFigure();
                     close all
                     combIm = [resizedIm,im0,im1,im2];

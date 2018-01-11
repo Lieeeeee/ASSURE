@@ -11,10 +11,13 @@ function [ loss ] = getPveBasedLoss( params )
 
     % load the images
     load('chapter3Env.mat');
-    imgCell = lungImgCell3D;
+    imgCell = liverImgCell3D;
     
     % prepare the parameters for the experiment
-    kernelSize = 2; Tlength = 3;
+    % % lung
+    % kernelSize = 2; Tlength = 3;
+    % liver
+    kernelSize = 4; Tlength = 3;
     SNAKE_RUN = 2;
     TRIVIAL_RUN = 0;
     SEGNUM_TO_USE = 0;
@@ -33,8 +36,7 @@ function [ loss ] = getPveBasedLoss( params )
         SEGNUM_TO_USE, OptionsIn, OptionsOut);
     
     % compute loss and return
-    loss = mean(abs((res.var_volGT-res.var_vol) ./ res.var_volGT)) + mean(abs((res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))) + ...
-        mean(abs((res.var_range_gt(1,:)-res.var_range(1,:)) ./ res.var_range_gt(1,:))) + (1 - mean(res.var_dice));
-%     loss = - mean(res.var_dice);
+    loss = max(abs((res.var_volGT-res.var_vol) ./ res.var_volGT)) + max(abs((res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))) + ...
+        2 * max(abs((res.var_range_gt(1,:)-res.var_range(1,:)) ./ res.var_range_gt(1,:)));
 end
 

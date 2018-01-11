@@ -41,6 +41,21 @@ classdef LineDisplay
             LineDisplay.ui(im,lineStrctCell,varMask);
         end
         
+        function displayVariabilityFromMask(im, seg, varMask, showMask, rThresh)
+            % displays the colored segmentation and the given uncertainty mask 
+            %   (if showMask is set to false, only displays the colored setmentation)
+            if ~exist('rThresh', 'var')
+                rThresh = 4;
+            end
+            lineStrctCell = LineStruct.getLineStructCellFromVarMask(im, seg, varMask, rThresh);
+            
+            if(~exist('showMask', 'var') || showMask)
+                LineDisplay.ui(im,lineStrctCell,varMask);
+            else
+                LineDisplay.ui(im,lineStrctCell);
+            end
+        end
+        
         function lineStrctCell = calcQualityLineStrctCell(seg,prior)
             [~,overlay] = Utils.displayCertaintyUncertainty2_3D(seg,prior,Utils.getBoundries(seg,false));
             lineStrctCell = LineStruct.getLineStructCell(overlay);
@@ -85,10 +100,14 @@ classdef LineDisplay
             if length(colors)<length(segs)
                 error 'too many segs, not enough colors. function should be fixed';
             end
-            
-            lineStrctCell = LineStruct.getLineStructCell(segs{1},colors(1,:));
-            for t=2:length(segs)
-                lineStrctCell = LineStruct.getLineStructCell(segs{t},colors(t,:),lineStrctCell);
+
+            if exist('mask', 'var') && ~isempty(mask) && length(segs) == 1
+                lineStrctCell = LineStruct.getLineStructCellFromVarMask(im, segs{1}, mask);
+            else
+                lineStrctCell = LineStruct.getLineStructCell(segs{1},colors(1,:));
+                for t=2:length(segs)
+                    lineStrctCell = LineStruct.getLineStructCell(segs{t},colors(t,:),lineStrctCell);
+                end
             end
             
             if exist('displayOuterSegOnly') && displayOuterSegOnly

@@ -70,6 +70,61 @@ classdef LineStruct
             end
             
         end
+        
+        function lineStrctCell = getLineStructCellFromVarMask(im, seg, varMask, optionalrTresh)
+            if ~exist('optionalrTresh', 'var')
+                optionalrTresh = 3;
+            end
+                
+            fNorm = @(p1,P) sum((repmat(p1,size(P,1),1)-P).^2,2);
+            lineStrctCell = cell(size(im,3),1);
+            for z = 1:size(seg,3)
+                currentSeg = seg(:,:,z);
+                currentVarMask = varMask(:,:,z);
+                segPoints = fliplr(Utils.getPointsOnContour(currentSeg));
+                var_outer_boundary = fliplr(Utils.getPointsOnContour(imfill(currentVarMask,'holes')));
+                innerVarMask = currentVarMask - imfill(currentVarMask,'holes');
+                if(any(innerVarMask(:) > 0))
+                    var_inner_boundary = fliplr(Utils.getPointsOnContour(currentVarMask - imfill(currentVarMask,'holes')));
+                else
+                    var_inner_boundary = var_outer_boundary;
+                end
+            
+                lineStrctCell{z} = LineStruct;
+                max_distances = zeros(size(currentVarMask));
+            
+                % for every point on the contour, get the distance from the variability contour
+                for point_ix = 1:size(segPoints,1)-1
+                    point1 = segPoints(point_ix, :);
+                    point2 = segPoints(point_ix + 1, :);
+                    dist_out = min(fNorm(point1,var_outer_boundary));                    
+                    dist_in = min(fNorm(point1,var_inner_boundary));
+                    
+                    max_dist = max(dist_out, dist_in);
+                    max_distances(point1(1),point1(2)) = max_dist;
+                    
+                    lineStrctCell{z}.P1 = [lineStrctCell{z}.P1 ;point1];
+                    lineStrctCell{z}.P2 = [lineStrctCell{z}.P2 ;point2];
+%                     if(max_dist > rThresh)
+%                         color = [1 0 0];
+%                     else
+%                         color = [0 1 0];
+%                     end
+%                     lineStrctCell{z}.colors = [lineStrctCell{z}.colors ;color];
+                end
+                
+                % color the contour - if the distance from the farthest
+                % border is larger than threshold, color red
+                rThresh = max(mean(max_distances(max_distances > 0)),optionalrTresh);
+                [overThresh_x, overThresh_y] = find(max_distances > rThresh);
+                lineStrctCell{z}.colors = repmat([0 1 0], size(lineStrctCell{z}.P1,1), 1);
+                if any(ismember(lineStrctCell{z}.P1,[overThresh_x, overThresh_y],'rows'))
+                    lineStrctCell{z}.colors(ismember(lineStrctCell{z}.P1, [overThresh_x, overThresh_y], 'rows'),:) = repmat([1 0 0], size(overThresh_x, 1), 1);
+                end
+                clear overThresh_x overThresh_y rThresh max_distances
+            end
+        end
+        
         function out = getContourLineOverlay(contourIm,im,optionalNewColor)
             %contourIm - either prior or segmentation
             boundryIm = Utils.getBoundries(contourIm);

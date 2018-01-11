@@ -32,16 +32,16 @@ end
 if (~WINDOWS)
     experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_080118/';
     
-    kernelSize = 2; Tlength = 3;
-    [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
-    [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,2,0,...
-                                OptionsInLung, OptionsOutLung);
-    printRes(resLung)
-%     kernelSize = 4; Tlength = 3;
-%     [OptionsInLiver, OptionsOutLiver] = SnakeOptions.getLiverOptions(DEBUG);
-%     resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/'],Tlength,0,2,0,...
-%                                 OptionsInLiver, OptionsOutLiver);
-%     printRes(resLiver)
+%     kernelSize = 2; Tlength = 3;
+%     [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
+%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,2,0,...
+%                                 OptionsInLung, OptionsOutLung);
+%     printRes(resLung)
+    kernelSize = 4; Tlength = 3;
+    [OptionsInLiver, OptionsOutLiver] = SnakeOptions.getLiverOptions(DEBUG);
+    resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver_3/'],Tlength,0,2,0,...
+                                OptionsInLiver, OptionsOutLiver);
+    printRes(resLiver)
 % 
 %     kernelSize = 3; Tlength = 7;
 %     [OptionsInKidney, OptionsOutKidney] = SnakeOptions.getKidneyOptions(DEBUG);
