@@ -65,9 +65,16 @@ classdef SnakeOptions
         end
         
         function [OptionsIn, OptionsOut] = getLiverOptions(DEBUG)
-%             params = [1.6645   -0.6115    3.8542    0.0160    0.3467    0.0264   -0.1131    1.0516    3.8982    0.0516   -6.8314    0.3190   -0.0825    0.4198    0.6603   -2.2152]; % multiple objectives with 1-dice
+            params = [1.6645   -0.6115    3.8542    0.0160    0.3467    0.0264   -0.1131    1.0516    3.8982    0.0516   -6.8314    0.3190   -0.0825    0.4198    0.6603   -2.2152]; % multiple objectives with 1-dice
 %             params = [1.4276   -0.3007    2.4772    0.0108    0.2288    0.2311   -0.0613    1.7769    3.5745    0.0341    1.8300    0.1016    0.2066    0.2252    1.0686   -1.3575]; % multiple objectives with 1/dice and max
 %             params = [1.4527   -0.4702    1.9121    0.0076    0.2302    0.2271   -0.0794    2.5498    3.9983    0.0258    2.7338    0.0626    0.1784    0.1640    0.8441   -1.2624];  % max penalty
+%             params = [1.8582   -0.5917    1.7512    0.0101    0.2161    0.2068   -0.0473    2.0106    3.3873    0.0437    2.4288    0.0999    0.1396    0.1691    0.9379   -2.2118]; % max penalty no dice
+%             init_it_in = 2; init_wline_in = -0.5; init_wedge_in = wedge_default; init_wterm_in = wterm_default; init_alpha_in = alpha_default;
+%             init_beta_in = beta_default; init_delta_in = -0.05; init_kappa_in = kappa_default; 
+%             init_it_out = 3; init_wline_out = wline_default; init_wedge_out = wedge_default; init_wterm_out = 0.1; init_alpha_out = alpha_default;
+%             init_beta_out = beta_default; init_delta_out = 1; init_kappa_out = -2; 
+%             params = [init_it_in, init_wline_in, init_wedge_in, init_wterm_in, init_alpha_in, init_beta_in, init_delta_in, init_kappa_in, ...
+%                 init_it_out, init_wline_out, init_wedge_out, init_wterm_out, init_alpha_out, init_beta_out, init_delta_out, init_kappa_out]; % original parameters
             iterIn = params(1); WlIn = params(2); WeIn = params(3); WtIn = params(4); alIn = params(5); beIn = params(6); delIn = params(7); kapIn = params(8);
             OptionsIn = SnakeOptions.getSpecifiedOptions(DEBUG, iterIn, WlIn, WeIn, WtIn, alIn, beIn, delIn, kapIn);
             

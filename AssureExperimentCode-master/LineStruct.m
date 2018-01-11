@@ -118,8 +118,9 @@ classdef LineStruct
                 rThresh = max(mean(max_distances(max_distances > 0)),optionalrTresh);
                 [overThresh_x, overThresh_y] = find(max_distances > rThresh);
                 lineStrctCell{z}.colors = repmat([0 1 0], size(lineStrctCell{z}.P1,1), 1);
-                if any(ismember(lineStrctCell{z}.P1,[overThresh_x, overThresh_y],'rows'))
-                    lineStrctCell{z}.colors(ismember(lineStrctCell{z}.P1, [overThresh_x, overThresh_y], 'rows'),:) = repmat([1 0 0], size(overThresh_x, 1), 1);
+                members = ismember(lineStrctCell{z}.P1,[overThresh_x, overThresh_y],'rows');
+                if any(members)
+                    lineStrctCell{z}.colors(members,:) = repmat([1 0 0], sum(members), 1);
                 end
                 clear overThresh_x overThresh_y rThresh max_distances
             end

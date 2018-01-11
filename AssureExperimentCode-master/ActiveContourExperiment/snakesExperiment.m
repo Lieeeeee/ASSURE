@@ -30,18 +30,20 @@ end
 
 %% using mean segmentations
 if (~WINDOWS)
-    experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_080118/';
+%     experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_080118/';
     
 %     kernelSize = 2; Tlength = 3;
 %     [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
-%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,2,0,...
+%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,[],[],[experiment_folder 'lung_my_colors/'],[],0,2,0,...
+%                                 OptionsInLung, OptionsOutLung);
+%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,[],[],[],[],0,2,0,...
 %                                 OptionsInLung, OptionsOutLung);
 %     printRes(resLung)
-    kernelSize = 4; Tlength = 3;
-    [OptionsInLiver, OptionsOutLiver] = SnakeOptions.getLiverOptions(DEBUG);
-    resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver_3/'],Tlength,0,2,0,...
-                                OptionsInLiver, OptionsOutLiver);
-    printRes(resLiver)
+%     kernelSize = 4; Tlength = 3;
+%     [OptionsInLiver, OptionsOutLiver] = SnakeOptions.getLiverOptions(DEBUG);
+%     resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver_6/'],Tlength,0,2,0,...
+%                                 OptionsInLiver, OptionsOutLiver);
+%     printRes(resLiver)
 % 
 %     kernelSize = 3; Tlength = 7;
 %     [OptionsInKidney, OptionsOutKidney] = SnakeOptions.getKidneyOptions(DEBUG);
@@ -55,7 +57,7 @@ if (~WINDOWS)
 %                                 OptionsInBrain, OptionsOutBrain);
 %     printRes(resBrain)
 
-    save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_080117.mat')
+%     save('AssureExperimentCode-master/ActiveContourExperiment/snakesExperiment_080117.mat')
 else
 %     experiment_folder = 'C:\\Users\\User\\Documents\\University\\masters\\thesis\\VariabilityAssessment\\figs\\snakes_dec17\\211217_meanSeg\\';
 %     
@@ -84,16 +86,17 @@ end
 
 
 %% using other segmentation every time
-% experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_dec17/experiment_171217_with_smoothing/different_init/';
-% allResStruct = struct;
-% 
-% kernelSize = 1; Tlength = 3;
-% for segNum = [1, 3:7]
-%     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/' num2str(segNum) '/'],Tlength,0,1,segNum);
-%     printRes(resLung)
-%     allResStruct.lungRes{segNum} = resLung;
-%     allResStruct.lungOutMasks{segNum} = outMasksLung;
-% end
+experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_110118/different_init/';
+allResStruct = struct;
+
+for segNum = [1:7]
+    [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
+    [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,[],[],[experiment_folder 'lung/' num2str(segNum) '/'],[],0,2,0,...
+                                OptionsInLung, OptionsOutLung);
+    printRes(resLung)
+    allResStruct.lungRes{segNum} = resLung;
+    allResStruct.lungOutMasks{segNum} = outMasksLung;
+end
 % 
 % 
 % kernelSize = 4; Tlength = 3;
@@ -126,4 +129,4 @@ end
 % contraction_param_out = -0.5;
 % smooth_param_out = 0.1;
 % 
-% save('AssureExperimentCode-master/ActiveContourExperiment/activeContourDifferentInitializationsExperiment171217_with_smoothing_.mat')
+save('AssureExperimentCode-master/ActiveContourExperiment/differentInitializationsExperiment110118.mat')

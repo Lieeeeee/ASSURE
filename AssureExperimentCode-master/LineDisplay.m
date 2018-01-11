@@ -196,7 +196,9 @@ classdef LineDisplay
             
             firstSlice = find(sum(sum(seg,1),2) > 0,1,'first');
             nSlices = find(sum(sum(seg,1),2) > 0,1,'last') - firstSlice + 1;
-            if ~isempty(prior)
+            if exist('varMask', 'var') && ~isempty(varMask)
+                lineStrctCell = LineStruct.getLineStructCellFromVarMask(im, seg, varMask);
+            elseif ~isempty(prior)
                 lineStrctCell = LineDisplay.calcLineStrctCellVariability(im,seg,prior,varMask);
             else
                 lineStrctCell = LineStruct.getLineStructCell(seg,[0,0,1]);

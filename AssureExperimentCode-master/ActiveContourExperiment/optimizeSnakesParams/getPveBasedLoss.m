@@ -36,7 +36,7 @@ function [ loss ] = getPveBasedLoss( params )
         SEGNUM_TO_USE, OptionsIn, OptionsOut);
     
     % compute loss and return
-    loss = max(abs((res.var_volGT-res.var_vol) ./ res.var_volGT)) + max(abs((res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))) + ...
-        2 * max(abs((res.var_range_gt(1,:)-res.var_range(1,:)) ./ res.var_range_gt(1,:)));
+    loss = mean(abs((res.var_volGT-res.var_vol) ./ res.var_volGT)) + mean(abs((res.var_range_gt(2,:)-res.var_range(2,:))./res.var_range_gt(2,:))) + ...
+        mean(abs((res.var_range_gt(1,:)-res.var_range(1,:)) ./ res.var_range_gt(1,:))) + (1 - min(res.var_dice));
 end
 

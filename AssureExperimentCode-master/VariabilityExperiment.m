@@ -959,16 +959,18 @@ classdef VariabilityExperiment
                 if exist('winLength','var')
                     params.winLength = winLength;
                 end
-                [pr] = Prior.intensityPriorLocal(im,seg,intensPrSize, params.intensityLocalT);
+                
                 
                 %evaluates mask
                 if exist('trivialRun','var') && trivialRun
+                    [pr] = Prior.intensityPriorLocal(im,seg,intensPrSize, params.intensityLocalT);
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskTrivial(im,logical(seg),pr,params,0.5);
                 elseif exist('activeContourRun', 'var') && activeContourRun == 1
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg);
                 elseif exist('activeContourRun', 'var') && activeContourRun == 2
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskSnakes(im, seg, OptionsIn, OptionsOut);
                 else
+                    [pr] = Prior.intensityPriorLocal(im,seg,intensPrSize, params.intensityLocalT);
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMask(im,logical(seg),pr,params,0.5);
                 end
                 outMasks{t} = varMaskEstimated;
@@ -1043,7 +1045,11 @@ classdef VariabilityExperiment
                     outImNameEval= [outDir '\' num2str(t) '-im' '.tiff'];
                     
                     LineDisplay.saveVariabilityAsTiff(im, seg, [],uncertaintyMask,outTiffNameOrig);
-                    LineDisplay.saveVariabilityAsTiff(im, seg, pr,varMaskEstimated,outTiffNameEval);
+                    if exist('activeContourRun', 'var') && activeContourRun > 0
+                        LineDisplay.saveVariabilityAsTiff(im, seg, [],varMaskEstimated,outTiffNameEval);
+                    else
+                        LineDisplay.saveVariabilityAsTiff(im, seg, pr,varMaskEstimated,outTiffNameEval);
+                    end
                     IO.saveAsTiff(outImNameEval,im);
                     
                     imwrite(imSeg,outSegName);
