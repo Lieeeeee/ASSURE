@@ -33,8 +33,16 @@ classdef DemoImagesCl
             seg = seg > 0.5;
         end
         
-        function [I, seg] = getCircleAndSeg()
-            I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg());
+        function [I, seg] = getCircleAndSeg(isDark)
+            if ~exist('isDark','var')
+                isDark = true;
+            end
+            if isDark
+                I = DemoImagesCl.getDarkCircleImg();
+            else
+                I = DemoImagesCl.getLightCircleImg();
+            end
+            I = DemoImagesCl.addBlurToImg(I);
             seg = DemoImagesCl.getCircleSeg(DemoImagesCl.circleRadius, DemoImagesCl.circleLocation);
         end
     end

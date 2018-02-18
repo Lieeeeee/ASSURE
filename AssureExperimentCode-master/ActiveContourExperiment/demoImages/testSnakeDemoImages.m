@@ -6,6 +6,7 @@
 LineDisplay.displayMasks(I, seg);
 varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(I, seg, OptionsIn, OptionsOut);
 LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
 
 %% dark circle with missaligned segmentation
 I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg());
@@ -13,4 +14,51 @@ seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
 LineDisplay.displayMasks(I, seg);
 varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(I, seg, OptionsIn, OptionsOut);
 LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
 
+%% light circle with aligned segmentation
+[I, seg] = DemoImagesCl.getCircleAndSeg(0);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+%% light circle with missaligned segmentation
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getLightCircleImg());
+seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskSnakes(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+%% %%%%%%%%%%%%% ACTIVE CONTOURS %%%%%%%%%%%%%
+%% dark circle with aligned segmentation
+[I, seg] = DemoImagesCl.getCircleAndSeg();
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+%% dark circle with missaligned segmentation
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg());
+seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+%% light circle with aligned segmentation
+[I, seg] = DemoImagesCl.getCircleAndSeg(0);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+
+%% light circle with missaligned segmentation
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getLightCircleImg());
+seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
