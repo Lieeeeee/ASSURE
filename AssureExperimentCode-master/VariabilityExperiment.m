@@ -966,7 +966,7 @@ classdef VariabilityExperiment
                     [pr] = Prior.intensityPriorLocal(im,seg,intensPrSize, params.intensityLocalT);
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskTrivial(im,logical(seg),pr,params,0.5);
                 elseif exist('activeContourRun', 'var') && activeContourRun == 1
-                    varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg);
+                    varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskActiveContours(im, seg, OptionsIn, OptionsOut);
                 elseif exist('activeContourRun', 'var') && activeContourRun == 2
                     varMaskEstimated = VariabilityEstimator.evaluate3DVarMaskSnakes(im, seg, OptionsIn, OptionsOut);
                 else

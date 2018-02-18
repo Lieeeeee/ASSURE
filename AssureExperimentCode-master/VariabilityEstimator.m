@@ -110,27 +110,22 @@ classdef VariabilityEstimator
             end
         end
         
-        function [varMask, varData, sensitivityMask] = evaluate3DVarMaskActiveContours(im, seg)
+        function [varMask, varData, sensitivityMask] = evaluate3DVarMaskActiveContours(im, seg, OptionsIn, OptionsOut)
             % evaluates a variability mask, given a segmentation and its priors. 
             varData = cell(size(im,3),1);
             varMask = false(size(seg));
             sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
             
             alg = 'edge'; % 'Chan-Vese'; 
-            n_iterations = 4; % 5
-            contraction_param_out = -0.5; % -0.5
-            smooth_param_out = 0.1; % 0
-            contraction_param_in = 1;
-            smooth_param_in = 1;
             for z = find(sum(sum(seg,1),2) > 0)'
                 currentIm = im(:,:,z);
                 currentSeg = seg(:,:,z);
                 
                 % first, apply active contour outwards, starting from the given segmentataion
-                bw_1 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_out, 'SmoothFactor', smooth_param_out);
+                bw_1 = activecontour(currentIm, currentSeg, OptionsOut.Iterations, alg, 'ContractionBias', OptionsOut.Contraction, 'SmoothFactor', OptionsOut.Smoothness);
                 
                 % next, apply active contour inwards, starting from the given segmentataion
-                bw_2 = activecontour(currentIm, currentSeg, n_iterations, alg, 'ContractionBias', contraction_param_in, 'SmoothFactor', smooth_param_in);
+                bw_2 = activecontour(currentIm, currentSeg, OptionsIn.Iterations, alg, 'ContractionBias', OptionsIn.Contraction, 'SmoothFactor', OptionsIn.Smoothness);
                 
                 varMask(:,:,z) = (bw_1 | bw_2) - (bw_1 & bw_2); % bw_1 - bw_2
             end
