@@ -9,9 +9,6 @@ else
     basefolder = '/cs/casmip/clara.herscu/git/thesis/SUREExperimentDataForUpload/';
     annotationsDirs = strcat([basefolder, 'anottations/'], SUREExperimentCls.novicesDirs);
     dataDir = [basefolder, 'data/'];
-%     annotationDirs = {'C:\Users\drorcohe\Desktop\SUREGrandExperiment\anottations\largeAmount'}; %...
-    %'C:\Users\drorcohe\Desktop\SUREGrandExperiment\anottations\smallAmount';
-%     dataDir = 'C:\Users\drorcohe\Desktop\SUREGrandExperiment\data';
     mode3D = true;
     
     [ dbFiles ] = generateDbStrctFromFolder(annotationDirs, dataDir, SUREExperimentCls.livers, SUREExperimentCls.windowingLivers);
@@ -89,7 +86,7 @@ end
 experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/snakes_jan18/experiment_110118/different_init/';
 allResStruct = struct;
 
-for segNum = [1:7]
+for segNum = [1,3:7]
     [OptionsInLung, OptionsOutLung] = SnakeOptions.getLungOptions(DEBUG);
     [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,[],[],[experiment_folder 'lung/' num2str(segNum) '/'],[],0,2,0,...
                                 OptionsInLung, OptionsOutLung);
