@@ -105,22 +105,22 @@ classdef LineStruct
                     
                     lineStrctCell{z}.P1 = [lineStrctCell{z}.P1 ;point1];
                     lineStrctCell{z}.P2 = [lineStrctCell{z}.P2 ;point2];
-%                     if(max_dist > rThresh)
-%                         color = [1 0 0];
-%                     else
-%                         color = [0 1 0];
-%                     end
-%                     lineStrctCell{z}.colors = [lineStrctCell{z}.colors ;color];
                 end
                 
                 % color the contour - if the distance from the farthest
                 % border is larger than threshold, color red
-                rThresh = max(mean(max_distances(max_distances > 0)),optionalrTresh);
+                mean_dist = mean(max_distances(max_distances > 0)); 
+                sd_dist = std(max_distances(max_distances > 0)); 
+                rThresh = max(mean_dist + 2.5*sd_dist, optionalrTresh);
                 [overThresh_x, overThresh_y] = find(max_distances > rThresh);
                 lineStrctCell{z}.colors = repmat([0 1 0], size(lineStrctCell{z}.P1,1), 1);
                 members = ismember(lineStrctCell{z}.P1,[overThresh_x, overThresh_y],'rows');
                 if any(members)
                     lineStrctCell{z}.colors(members,:) = repmat([1 0 0], sum(members), 1);
+                end
+                % go over the border and remove outliers
+                for point_ix = 1:size(segPoints,1)-1
+                    
                 end
                 clear overThresh_x overThresh_y rThresh max_distances
             end

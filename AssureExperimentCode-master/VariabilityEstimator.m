@@ -127,7 +127,7 @@ classdef VariabilityEstimator
                 % next, apply active contour inwards, starting from the given segmentataion
                 bw_2 = activecontour(currentIm, currentSeg, OptionsIn.Iterations, alg, 'ContractionBias', OptionsIn.Contraction, 'SmoothFactor', OptionsIn.Smoothness);
                 
-                varMask(:,:,z) = (bw_1 | bw_2) - (bw_1 & bw_2); % bw_1 - bw_2
+                varMask(:,:,z) = (bw_1 | bw_2 | currentSeg) - (bw_1 & bw_2); % bw_1 - bw_2
             end
         end
         

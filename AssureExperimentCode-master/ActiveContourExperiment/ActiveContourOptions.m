@@ -24,7 +24,7 @@ classdef ActiveContourOptions
         end
         
         function [OptionsIn, OptionsOut] = getLungOptions()
-            params = [4, -0.5, 0.1, 1, 1];
+            params = [4, 1, 1, 4, -0.5, 0.1];
             iterIn = params(1); cIn = params(2); sIn = params(3); 
             OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);
             

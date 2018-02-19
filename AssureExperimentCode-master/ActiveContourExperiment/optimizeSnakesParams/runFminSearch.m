@@ -26,7 +26,7 @@
 
 %% activeContours MATLAB implementation
 % lung
-initial_population = [4, -0.5, 1, 4, 0.5, 1]; 
+initial_population = [4, -0.5, 1, 4, 0.1, 1]; 
 % options = optimset('Display','iter');
 % [x, fval] = fminsearch(@getPveBasedLossAC, initial_population, options);
 lb = [1, -Inf, 0, 1, -Inf, 0]; ub = [Inf, Inf, Inf, Inf, Inf, Inf];
