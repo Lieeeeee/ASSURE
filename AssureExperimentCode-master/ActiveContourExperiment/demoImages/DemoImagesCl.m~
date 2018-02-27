@@ -34,8 +34,8 @@ classdef DemoImagesCl
         end
         
         function [seg] = getEllipseSeg(hor_radius, ver_radius, location)
-            [columnsInImage, rowsInImage] = meshgrid(1:100, 1:100);
-            seg = (rowsInImage - location(2)).^2 ./ ver_radius^2 + (columnsInImage - location(1)).^2 ./ hor_radius^2 <= 1;
+            [columnsInImage rowsInImage] = meshgrid(1:imageSizeX, 1:imageSizeY);
+            seg = (rowsInImage - location(2)).^2 ./ ver_radius^2 + (100 - location(1)).^2 ./ hor_radius^2 <= 1;
         end 
         
         function [I, seg] = getCircleAndSeg(isDark)

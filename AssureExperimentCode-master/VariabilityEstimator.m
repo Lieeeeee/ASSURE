@@ -145,7 +145,7 @@ classdef VariabilityEstimator
                     in_mask = in_mask & current_mask;
                 end
                 
-                varMask(:,:,z) = out_mask - in_mask;
+                varMask(:,:,z) = (out_mask - in_mask) | Utils.getBoundries(currentSeg);
             end
         end
         

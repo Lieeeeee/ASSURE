@@ -21,7 +21,7 @@ imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesSh
 % imgCell = ImgStrct.dbFileStrctToImgStrctCell(dbFiles, SUREExperimentCls.slicesShortKydneys, mode3D);
 
 % for imNum = 1:size(imgCell, 2)
-imNum = 1;
+imNum = 2;
 %     %shows actual variability
 %     Utils.showVariability(imgCell{imNum})
 %     %shows annotation
@@ -70,7 +70,14 @@ intensityPrior = Prior.intensityPriorLocal(im,seg,2);
 
 % calculate variability from mean segmentation
 varMask_2 = VariabilityEstimator.evaluate3DVarMask(im,meanSeg,prior.min,params,0.5); % dror's way
-varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(im,meanSeg); % my way
+
+params = [10, 0, 0, 10, 0, 0]; 
+iterIn = params(1); cIn = params(2); sIn = params(3); 
+OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);
+iterOut = params(4); cOut = params(5); sOut = params(6); 
+OptionsOut = ActiveContourOptions.getSpecifiedOptions(iterOut, cOut, sOut);
+
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(im,meanSeg, OptionsIn, OptionsOut); % my way
 
 %display the variability result
 % LineDisplay.displayVariability(im,meanSeg,prior.min,varMask);

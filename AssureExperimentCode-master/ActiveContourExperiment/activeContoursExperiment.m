@@ -28,12 +28,18 @@ else
 end
 
 %% using mean segmentations
-experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_feb18/experiment_210218/';
-% kernelSize = 2; Tlength = 3;
+experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_feb18/experiment_270218/';
 % [OptionsIn, OptionsOut] = ActiveContourOptions.getLungOptions();
-% [resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,1,0,OptionsIn, OptionsOut);
-% printRes(resLung)
+params = [10, 0, 0, 10, 0, 0]; 
+iterIn = params(1); cIn = params(2); sIn = params(3); 
+OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);
+iterOut = params(4); cOut = params(5); sOut = params(6); 
+OptionsOut = ActiveContourOptions.getSpecifiedOptions(iterOut, cOut, sOut);
 
+kernelSize = 2; Tlength = 3;
+[resLung, outMasksLung] =  VariabilityExperiment.holdExperiment(lungImgCell3D,kernelSize,[],[experiment_folder 'lung/'],Tlength,0,1,0,OptionsIn, OptionsOut);
+printRes(resLung)
+% 
 % kernelSize = 4; Tlength = 3;
 % [OptionsIn, OptionsOut] = ActiveContourOptions.getLiverOptions();
 % resLiver = VariabilityExperiment.holdExperiment(liverImgCell3D,kernelSize,[],[experiment_folder 'liver/'],Tlength,0,1,0,OptionsIn, OptionsOut);
@@ -43,12 +49,12 @@ experiment_folder = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_feb18
 % [OptionsIn, OptionsOut] = ActiveContourOptions.getKidneyOptions();
 % [resKidney, outMasksKidney] =  VariabilityExperiment.holdExperiment(kidneyImgCell3D,kernelSize,[],[experiment_folder 'kidney/'],Tlength,0,1,0,OptionsIn, OptionsOut);
 % printRes(resKidney)
-
-kernelSize = 3; Tlength = 5;
-[OptionsIn, OptionsOut] = ActiveContourOptions.getBrainOptions();
-[resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/'],Tlength,0,1,0,OptionsIn, OptionsOut);
-printRes(resBrain)
-
+% 
+% kernelSize = 3; Tlength = 5;
+% [OptionsIn, OptionsOut] = ActiveContourOptions.getBrainOptions();
+% [resBrain, outMasksBrain] = VariabilityExperiment.holdExperiment(brainImgCell3D,kernelSize,[],[experiment_folder 'brain/'],Tlength,0,1,0,OptionsIn, OptionsOut);
+% printRes(resBrain)
+% 
 % n_iterations = 4; % 5
 % contraction_param_out = -0.5; % -0.5
 % smooth_param_out = 0.1; % 0
