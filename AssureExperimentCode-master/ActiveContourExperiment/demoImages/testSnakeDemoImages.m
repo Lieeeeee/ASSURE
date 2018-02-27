@@ -43,7 +43,7 @@ LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
 % [OptionsIn, OptionsOut] = ActiveContourOptions.getLungOptions();
 outDir = '/cs/casmip/clara.herscu/git/thesis/figs/activeContour_feb18/demo/';
 
-params = [10, 0, 0, 0, 0, 0]; 
+params = [10, 0.01, 0, 10, -0.01, 0]; 
 iterIn = params(1); cIn = params(2); sIn = params(3); 
 OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);
 

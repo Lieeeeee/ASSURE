@@ -29,7 +29,7 @@ classdef DemoImagesCl
         
         function [seg] = getCircleSeg(radius, location)
             seg = zeros(100,100);
-            seg = rgb2gray(insertShape(seg, 'Circle', [location(1) location(2) radius], 'Color', 'white', 'Opacity', 1));
+            seg = rgb2gray(insertShape(seg, 'FilledCircle', [location(1) location(2) radius], 'Color', 'white', 'Opacity', 1));
             seg = seg > 0.5;
         end
         

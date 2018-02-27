@@ -132,21 +132,6 @@ classdef VariabilityEstimator
 %             end
 
             % another try: estimate variability by accumulating iterations of the algorithm
-            for z = find(sum(sum(seg,1),2) > 0)'
-                currentIm = im(:,:,z);
-                currentSeg = seg(:,:,z);
-                
-                % apply active contour, and save every iterations result
-                out_mask = currentSeg;
-                in_mask = currentSeg;
-                for iter = 1:OptionsIn.Iterations
-                    current_mask = activecontour(currentIm, currentSeg, iter);
-                    out_mask = out_mask | current_mask;
-                    in_mask = in_mask & current_mask;
-                end
-                
-                varMask(:,:,z) = out_mask - in_mask;
-            end
         end
         
         function [varMask, varData, sensitivityMask] = evaluate3DVarMaskSnakes(im, seg, OptionsIn, OptionsOut)
