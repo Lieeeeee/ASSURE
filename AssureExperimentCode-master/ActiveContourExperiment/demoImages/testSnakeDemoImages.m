@@ -53,13 +53,15 @@ OptionsOut = ActiveContourOptions.getSpecifiedOptions(iterOut, cOut, sOut);
 %% dark circle with aligned segmentation
 [I, seg] = DemoImagesCl.getCircleAndSeg();
 LineDisplay.displayMasks(I, seg);
+im0 = LineDisplay.getCroppedFrameFromFigure();
 varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
 LineDisplay.displayVariabilityWithoutSeg(I, varMask);
-im0 = LineDisplay.getCroppedFrameFromFigure();
-LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
 im1 = LineDisplay.getCroppedFrameFromFigure();
-combIm = [im0,im1];
-imshow(combIm);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
 
 %% dark circle with missaligned segmentation
 I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg());
