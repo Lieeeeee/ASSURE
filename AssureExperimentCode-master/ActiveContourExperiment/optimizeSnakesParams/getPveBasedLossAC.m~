@@ -14,7 +14,8 @@ function [ loss ] = getPveBasedLossAC( params )
 
     % load the images
     load('chapter3Env.mat');
-    imgCell = brainImgCell3D;
+    imgCell = kidneyImgCell3D;
+    imgCell = brain
     
     % prepare the parameters for the experiment
     % % lung
@@ -26,8 +27,8 @@ function [ loss ] = getPveBasedLossAC( params )
     SEGNUM_TO_USE = 0;
 
     % extract optimized parameters
-    iterIn = round(params(1)); cIn = params(2); sIn = max(0, params(3)); 
-    iterOut = round(params(4)); cOut = params(5); sOut = max(0, params(6)); 
+    iterIn = round(params(1)); cIn = params(2); sIn = params(3); 
+    iterOut = round(params(4)); cOut = params(5); sOut = params(6); 
     
     % create an Options struct for in and out
     OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);

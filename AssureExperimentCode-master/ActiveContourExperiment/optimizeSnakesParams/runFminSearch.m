@@ -25,19 +25,19 @@
 % save('AssureExperimentCode-master/ActiveContourExperiment/optimizeSnakesParams/fminSearchDice_liver_maxpenalty_without_dice.mat')
 
 %% activeContours MATLAB implementation
-% lung
-initial_population = [4, -0.5, 1, 4, 0.1, 1]; 
-% initial_population = [3, -4.4412, 1.3351, 4, 9.0265, 6.1125];
-% options = optimset('Display','iter');
-% [x, fval] = fminsearch(@getPveBasedLossAC, initial_population, options);
-lb = [1, -Inf, 0, 1, -Inf, 0]; ub = [Inf, Inf, Inf, Inf, Inf, Inf];
-% [x, fval] = fmincon(@getPveBasedLossAC,initial_population,[],[],[],[],lb,ub,[],options);
+% lung result = [4, 1.2031, 0.8832, 4, -0.3484, 0.1173];
+% liver
+initial_population = [4, 1, 1, 4, -0.5, 0.1];
+options = optimset('Display','iter');
+[x, fval] = fminsearch(@getPveBasedLossAC, initial_population, options)
 
 % GA
-nvars = 6;
-generations = 5*nvars;
-% creating options object
-options = optimoptions('ga', 'PlotFcn', @gaplotbestf, 'InitialPopulationMatrix', initial_population, 'Display', 'iter', 'MaxGenerations', generations);
-
-% calling ga still without setting constraints
-[x, fval] = ga(@getPveBasedLossAC, nvars, [],[],[],[], lb, ub, [], options);
+% initial_population = [3, -4.4412, 1.3351, 4, 9.0265, 6.1125];
+% lb = [1, -Inf, 0, 1, -Inf, 0]; ub = [Inf, Inf, Inf, Inf, Inf, Inf];
+% nvars = 6;
+% generations = 5*nvars;
+% % creating options object
+% options = optimoptions('ga', 'PlotFcn', @gaplotbestf, 'InitialPopulationMatrix', initial_population, 'Display', 'iter', 'MaxGenerations', generations);
+% 
+% % calling ga still without setting constraints
+% [x, fval] = ga(@getPveBasedLossAC, nvars, [],[],[],[], lb, ub, [], options);

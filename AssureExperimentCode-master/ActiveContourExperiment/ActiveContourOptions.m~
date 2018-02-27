@@ -54,15 +54,21 @@ classdef ActiveContourOptions
             OptionsOut = ActiveContourOptions.getSpecifiedOptions(iterOut, cOut, sOut);
         end
         
-        function [OptionsIn, OptionsOut] = getBrainOptions()
+        function [OptionsIn, OptionsOut] = getBrainOptions(DEBUG)
+            OptionsIn = struct;
+            OptionsIn.Iterations = 5;
+            OptionsIn.Delta = -0.5;
 
-            params = [4, 1.3343, 0.1312, 4, -0.7082, 0.0933]; % fminSearch result
-%             params = [4, 1, 1, 4, -0.5, 0.1];
-            iterIn = params(1); cIn = params(2); sIn = params(3); 
-            OptionsIn = ActiveContourOptions.getSpecifiedOptions(iterIn, cIn, sIn);
+            OptionsOut = struct;
+            OptionsOut.Iterations = 2;
+            OptionsOut.Delta = 1;
+            OptionsOut.Kappa = -2;
+            OptionsOut.Wterm = 0.1;
             
-            iterOut = params(4); cOut = params(5); sOut = params(6); 
-            OptionsOut = ActiveContourOptions.getSpecifiedOptions(iterOut, cOut, sOut);
+            if(DEBUG)
+                OptionsIn.Verbose = true;
+                OptionsOut.Verbose = true;
+            end
         end
 %         
 %         function [OptionsStruct] = getAllOptions(DEBUG)
