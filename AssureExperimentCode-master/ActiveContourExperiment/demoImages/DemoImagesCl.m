@@ -9,14 +9,20 @@ classdef DemoImagesCl
     end
     
     methods (Static)
-        function [I] = getDarkCircleImg()
+        function [I] = getDarkCircleImg(opacity)
+            if ~exist('opacity', 'var')
+                opacity = 1;
+            end
             I = zeros(100,100);
             % add circle in center of image
-            I = rgb2gray(insertShape(I, 'FilledCircle', [DemoImagesCl.circleLocation(1) DemoImagesCl.circleLocation(2) DemoImagesCl.circleRadius], 'Color', 'white', 'Opacity', 1));
+            I = rgb2gray(insertShape(I, 'FilledCircle', [DemoImagesCl.circleLocation(1) DemoImagesCl.circleLocation(2) DemoImagesCl.circleRadius], 'Color', 'white', 'Opacity', opacity));
         end
         
-        function [I] = getLightCircleImg()
-            I = DemoImagesCl.getDarkCircleImg();
+        function [I] = getLightCircleImg(opacity)
+            if ~exist('opacity', 'var')
+                opacity = 1;
+            end
+            I = DemoImagesCl.getDarkCircleImg(opacity);
             I = 1-I;
         end
         
@@ -38,14 +44,17 @@ classdef DemoImagesCl
             seg = (rowsInImage - location(2)).^2 ./ ver_radius^2 + (columnsInImage - location(1)).^2 ./ hor_radius^2 <= 1;
         end 
         
-        function [I, seg] = getCircleAndSeg(isDark)
+        function [I, seg] = getCircleAndSeg(isDark, opacity)
             if ~exist('isDark','var')
                 isDark = true;
             end
+            if ~exist('opacity', 'var')
+                opacity = 1;
+            end
             if isDark
-                I = DemoImagesCl.getDarkCircleImg();
+                I = DemoImagesCl.getDarkCircleImg(opacity);
             else
-                I = DemoImagesCl.getLightCircleImg();
+                I = DemoImagesCl.getLightCircleImg(opacity);
             end
             I = DemoImagesCl.addBlurToImg(I);
             seg = DemoImagesCl.getCircleSeg(DemoImagesCl.circleRadius, DemoImagesCl.circleLocation);

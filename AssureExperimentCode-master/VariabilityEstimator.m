@@ -65,8 +65,6 @@ classdef VariabilityEstimator
             end
         end
         
-        
-        
         function [varMask, varData,sensitivityMask] = evaluate3DVarMaskTrivial(im,seg,priorRes,params,eps)
             varData = cell(size(im,3),1);
             varMask = false(size(seg));
@@ -110,12 +108,12 @@ classdef VariabilityEstimator
             end
         end
         
-        function [varMask, varData, sensitivityMask] = evaluate3DVarMaskActiveContours(im, seg, OptionsIn, OptionsOut)
-            % evaluates a variability mask, given a segmentation and its priors. 
-            varData = cell(size(im,3),1);
-            varMask = false(size(seg));
-            sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
-            
+%         function [varMask, varData, sensitivityMask] = evaluate3DVarMaskActiveContours(im, seg, OptionsIn, OptionsOut)
+%             % evaluates a variability mask, given a segmentation and its priors. 
+%             varData = cell(size(im,3),1);
+%             varMask = false(size(seg));
+%             sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
+%             
 %             alg = 'edge'; % 'Chan-Vese'; 
 %             for z = find(sum(sum(seg,1),2) > 0)'
 %                 currentIm = im(:,:,z);
@@ -130,8 +128,16 @@ classdef VariabilityEstimator
 %                 
 %                 varMask(:,:,z) = (bw_1 | bw_2 | currentSeg) - (bw_1 & bw_2); % bw_1 - bw_2
 %             end
-
+%         end
+        
+        function [varMask, varData, sensitivityMask] = evaluate3DVarMaskActiveContours(im, seg, OptionsIn, OptionsOut)
             % another try: estimate variability by accumulating iterations of the algorithm
+            % evaluates a variability mask, given a segmentation. 
+            varData = cell(size(im,3),1);
+            varMask = false(size(seg));
+            sensitivityMask = zeros([size(seg,1),size(seg,2),size(seg,3),3]);
+            
+            
             for z = find(sum(sum(seg,1),2) > 0)'
                 currentIm = im(:,:,z);
                 currentSeg = seg(:,:,z);

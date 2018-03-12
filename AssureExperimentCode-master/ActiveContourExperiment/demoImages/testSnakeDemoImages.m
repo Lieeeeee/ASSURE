@@ -123,3 +123,105 @@ im2 = LineDisplay.getCroppedFrameFromFigure();
 combIm = [im0,im1,im2];
 close all;
 figure, imshow(combIm);
+
+
+%% circle with aligned segmentation: intensity = 0.8
+[I, seg] = DemoImagesCl.getCircleAndSeg(true, 0.8);
+LineDisplay.displayMasks(I, seg);
+im0 = LineDisplay.getCroppedFrameFromFigure();
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+im1 = LineDisplay.getCroppedFrameFromFigure();
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
+
+%% circle with aligned segmentation: intensity = 0.5
+[I, seg] = DemoImagesCl.getCircleAndSeg(true, 0.5);
+LineDisplay.displayMasks(I, seg);
+im0 = LineDisplay.getCroppedFrameFromFigure();
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+im1 = LineDisplay.getCroppedFrameFromFigure();
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
+
+%% circle with aligned segmentation: intensity = 0.2
+[I, seg] = DemoImagesCl.getCircleAndSeg(true, 0.2);
+LineDisplay.displayMasks(I, seg);
+im0 = LineDisplay.getCroppedFrameFromFigure();
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+im1 = LineDisplay.getCroppedFrameFromFigure();
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
+
+%% dark circle with big segmentation: intensity = 0.5
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg(0.5));
+seg_big = DemoImagesCl.getCircleSeg(25, [50, 50]);
+LineDisplay.displayMasks(I, seg_big);
+im0 = LineDisplay.getCroppedFrameFromFigure();
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg_big, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+im1 = LineDisplay.getCroppedFrameFromFigure();
+LineDisplay.displayVariabilityFromMask(I, seg_big, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
+
+%%  dark circle with ellipse segmentation: intensity = 0.5
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getDarkCircleImg(0.5));
+hor_radius = 10; ver_radius = 30; location = [50 50];
+seg_ellipse = DemoImagesCl.getEllipseSeg(hor_radius, ver_radius, location);
+LineDisplay.displayMasks(I, seg_ellipse);
+im0 = LineDisplay.getCroppedFrameFromFigure();
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg_ellipse, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+im1 = LineDisplay.getCroppedFrameFromFigure();
+LineDisplay.displayVariabilityFromMask(I, seg_ellipse, varMask, false);
+im2 = LineDisplay.getCroppedFrameFromFigure();
+combIm = [im0,im1,im2];
+close all;
+figure, imshow(combIm);
+
+%% light circle with aligned segmentation: intensity = 0.5
+[I, seg] = DemoImagesCl.getCircleAndSeg(false, 0.5);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+
+%% light circle with missaligned segmentation: intensity = 0.5
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getLightCircleImg(0.5));
+seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+
+%% light circle with aligned segmentation: intensity = 0.2
+[I, seg] = DemoImagesCl.getCircleAndSeg(false, 0.2);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+
+%% light circle with missaligned segmentation: intensity = 0.2
+I = DemoImagesCl.addBlurToImg(DemoImagesCl.getLightCircleImg(0.2));
+seg = DemoImagesCl.getCircleSeg(15, [50, 55]);
+LineDisplay.displayMasks(I, seg);
+varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
+LineDisplay.displayVariabilityWithoutSeg(I, varMask);
+LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);

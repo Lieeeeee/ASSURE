@@ -525,7 +525,7 @@ classdef Utils
                 % calculate dilated boundary of this segmentation
                 currSeg = segs{segNum};
                 for slice = 1:size(currSeg,3)
-                    dilatedSegBoundary = imdilate(currSeg(:,:,slice), NHOOD, 'same') - imerode(currSeg(:,:,slice), NHOOD, 'same');
+                    dilatedSegBoundary = imdilate(currSeg, NHOOD, 'same') - imerode(currSeg, NHOOD, 'same');
 
                     % add to previous votes
                     uncMaskGradient(:,:,slice) = uncMaskGradient(:,:,slice) + dilatedSegBoundary;
