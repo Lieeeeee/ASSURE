@@ -517,22 +517,34 @@ classdef Utils
             % calculates the uncertainty region hitMap from all segmentations
             % (0 = lowest certainty, 10 = highest certainty)
             
-            uncMaskGradient = false(size(segs{1}));
+            uncMaskGradient = zeros(size(segs{1}));
             NHOOD = ones(3,3);
             
             % iterate over all segmentations and accumulate them to a hitMap
-            for segNum = 1:size(segs)
-                % calculate dilated boundary of this segmentation
-                currSeg = segs{segNum};
-                for slice = 1:size(currSeg,3)
+            for slice = 1:size(uncMaskGradient,3)
+                currSliceSegs = cell(size(segs));
+                for segNum = 1:size(segs,2)
+                    % calculate dilated boundary of this segmentation
+                    currSeg = segs{segNum};
+                    currSliceSegs{segNum} = imdilate(currSeg(:,:,slice), NHOOD, 'same');
                     dilatedSegBoundary = imdilate(currSeg(:,:,slice), NHOOD, 'same') - imerode(currSeg(:,:,slice), NHOOD, 'same');
 
                     % add to previous votes
                     uncMaskGradient(:,:,slice) = uncMaskGradient(:,:,slice) + dilatedSegBoundary;
-                    
-                    % now pixels with higher value represent areas of many votes
-                    % post processing: fill areas between segmentations by gradient
                 end
+                % now pixels with higher value represent areas of many votes
+                % post processing:
+                % 1. find holes in hitmap;
+                [union, intersection, ~] = Utils.calcUnionIntersection(currSliceSegs);
+                holes = (uncMaskGradient(:,:,slice) == 0); % holes have 0 value
+                holes = holes - (~union); % remove holes outside of union and inside intersection
+                holes = holes - imerode(imerode(intersection,NHOOD,'same'), NHOOD, 'same');
+                holes = (holes ~= 0);
+                uncMaskWithNaNs = double(uncMaskGradient(:,:,slice));
+                uncMaskWithNaNs(holes) = NaN;
+                
+                % 2. fill areas between segmentations by gradient
+                uncMaskGradient(:,:,slice) = inpaintn(uncMaskWithNaNs);
             end
         
         end
