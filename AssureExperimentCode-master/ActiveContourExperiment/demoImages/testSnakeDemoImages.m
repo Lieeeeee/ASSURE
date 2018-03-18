@@ -225,3 +225,12 @@ LineDisplay.displayMasks(I, seg);
 varMask = VariabilityEstimator.evaluate3DVarMaskActiveContours(I, seg, OptionsIn, OptionsOut);
 LineDisplay.displayVariabilityWithoutSeg(I, varMask);
 LineDisplay.displayVariabilityFromMask(I, seg, varMask, false);
+
+
+%% dark circle with gradient variability
+[I, seg1] = DemoImagesCl.getCircleAndSeg();
+LineDisplay.displayMasks(I, seg1);
+seg2 = DemoImagesCl.getCircleSeg(25, [50, 50]);
+seg3 = seg1;
+segs = {seg1, seg2, seg3};
+[uncMaskGradient] = Utils.calcUncertaintyGradientMask(segs);

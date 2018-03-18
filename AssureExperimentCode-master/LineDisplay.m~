@@ -36,8 +36,7 @@ classdef LineDisplay
         
         function displayVariabilityGradientMask(im, varMask)
             % takes in a variability mask containing varying levels of
-            % certainty (highest value = most certain), and displays it as colors overlaying the image (highest certainty = green).
-            
+            % certainty (
         end
         
         function displayVariability(im,seg,prior,varMask)
